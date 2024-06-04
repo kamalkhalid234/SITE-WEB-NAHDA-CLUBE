@@ -34,9 +34,6 @@
 </head>
 
 <body>
-
-
-
     <!-- ======= Header ======= -->
     <?php include "../inc/header.php"; ?>
     <!-- End Header -->
