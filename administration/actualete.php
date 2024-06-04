@@ -43,7 +43,7 @@
             <div class="section-title">
                 <h2>حوارات و لقاءات
                 </h2>
-                <h3><span>حوارات و لقاءات
+                <h3>حوارات<span> و لقاءات
                     </span></h3>
                 <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas
                     atque vitae autem.</p>

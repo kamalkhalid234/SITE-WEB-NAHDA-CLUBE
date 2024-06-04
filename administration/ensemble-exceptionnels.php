@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>BizLand Bootstrap Template - Index</title>
+    <title>الجموع الاستثنائية</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -96,7 +96,7 @@
         <div class="container" data-aos="fade-up">
             <div class="section-title">
                 <h2>الجموع الاستثنائية</h2>
-                <h3><span>الجموع الاستثنائية</span></h3>
+                <h3>الجموع<span> الاستثنائية</span></h3>
                 <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas
                     atque vitae autem.</p>
                 <div class="pdf-grid">

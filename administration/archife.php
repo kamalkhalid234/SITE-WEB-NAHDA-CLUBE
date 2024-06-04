@@ -25,8 +25,10 @@
     <main id="main">
         <div class="container" data-aos="fade-up">
             <div class="section-title">
-                <h2>OUR PHOTO GALLERY</h2>
-                <h3><span>OUR PHOTO GALLERY</span></h3>
+                <h2>أرشيف الجمعية
+                </h2>
+                <h3>أرشيف<span> الجمعية
+                    </span></h3>
                 <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas
                     atque vitae autem.</p>
                 <section>

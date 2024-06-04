@@ -31,13 +31,28 @@
     }
 
     .tajarib img {
-        width: 50px;
+        width: 100%;
         height: 50px;
         border-radius: 50%;
     }
 
     .table-bordered {
         border: 1px solid #dee2e6;
+    }
+
+    .swiper-container {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .swiper-slide {
+        width: auto;
+        margin-right: 5;
+    }
+
+    .swiper-slide img {
+        width: 100%;
+        height: 50vh;
     }
     </style>
 </head>
@@ -51,22 +66,27 @@
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex align-items-center">
         <div class="container" data-aos="zoom-out" data-aos-delay="100">
+            <div class="row">
+
+            </div>
             <h1>NAHDA <span>الموقع الرسمي </span></h1>
             <h1>VILLE DE CHICHAOUA</h1>
-            <h2>LKKKKKKKKKKKKKKKKK</h2>
+            <h2> نهضة شيشاوة , هو نادي لكرة القدم تأسس في عام 1973 ومقره مدينة شيشاوة</h2>
             <div class="d-flex">
                 <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i
                         class="bi bi-play-circle"></i><span>Watch Video</span></a>
             </div>
-        </div>
+            <div class="logo-container">
+                <img src="../assets/img/jeuour/image_porf.png" alt="">
+            </div>
+
     </section><!-- End Hero -->
 
     <main id="main">
 
         <!-- ======= Featured Services Section ======= -->
         <section id="featured-services" class="featured-services">
-            <div class="container" data-aos="fade-up">
-
+            <div class="container" data-aos="">
                 <div class="section-title">
                     <h2>About</h2>
                     <h3>Find Out More <span>About Us</span></h3>
@@ -113,8 +133,8 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
-                    <h2>About</h2>
-                    <h3>Find Out More <span>About Us</span></h3>
+                    <h2>جدول النقط</h2>
+                    <h3>جدول <span> النقط</span></h3>
                     <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas
                         atque vitae autem.</p>
                 </div>
@@ -193,42 +213,59 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
-                    <h2>Services</h2>
-                    <h3>Check our <span>Services</span></h3>
+                    <h2>أحدث الأخبار</h2>
+                    <h3>أحدث <span> الأخبار</span></h3>
                     <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas
                         atque vitae autem.</p>
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                            <h4><a href="">Lorem Ipsum</a></h4>
-                            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
-                        </div>
-                    </div>
-
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
                         data-aos-delay="200">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bx-file"></i></div>
-                            <h4><a href="">Sed ut perspiciatis</a></h4>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                        <div class="card">
+                            <img src="../assets/img/equipe/imagN1.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                    of the card's content.</p>
+                                <a href="actualete.php" class="btn btn-primary">Go somewhere</a>
+                            </div>
                         </div>
                     </div>
 
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in"
                         data-aos-delay="300">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bx-tachometer"></i></div>
-                            <h4><a href="">Magni Dolores</a></h4>
-                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                        <div class="card">
+                            <img src="../assets/img/equipe/imagN1.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                    of the card's content.</p>
+                                <a href="actualete.php" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in"
+                        data-aos-delay="400">
+                        <div class="card">
+                            <img src="../assets/img/equipe/imagN1.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                    of the card's content.</p>
+                                <a href="actualete.php" class="btn btn-primary">Go somewhere</a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
             </div>
-        </section><!-- End Services Section -->
+        </section>
+
+        <!-- End Services Section -->
 
         <!-- ======= Team Section ======= -->
         <section id="team" class="team section-bg">
@@ -246,7 +283,7 @@
                         <div class="card-wrapper swiper-wrapper">
                             <div class="card swiper-slide">
                                 <div class="image-box">
-                                    <img src="../assets/img/equipe/imagN1.jpg" alt="" />
+                                    <img src="../assets/img/jeuour/image_porf.png" alt="" />
                                 </div>
                                 <div class="profile-details">
                                     <div class="name-job">
@@ -257,7 +294,7 @@
                             </div>
                             <div class="card swiper-slide">
                                 <div class="image-box">
-                                    <img src="../assets/img/equipe/imagN1.jpg" alt="" />
+                                    <img src="../assets/img/jeuour/image_porf.png" alt="" />
                                 </div>
                                 <div class="profile-details">
                                     <div class="name-job">
@@ -268,7 +305,7 @@
                             </div>
                             <div class="card swiper-slide">
                                 <div class="image-box">
-                                    <img src="../assets/img/equipe/imagN1.jpg" alt="" />
+                                    <img src="../assets/img/jeuour/image_porf.png" alt="" />
                                 </div>
                                 <div class="profile-details">
                                     <div class="name-job">
@@ -279,7 +316,7 @@
                             </div>
                             <div class="card swiper-slide">
                                 <div class="image-box">
-                                    <img src="../assets/img/equipe/imagN1.jpg" alt="" />
+                                    <img src="../assets/img/jeuour/image_porf.png" alt="" />
                                 </div>
                                 <div class="profile-details">
                                     <div class="name-job">
@@ -290,7 +327,7 @@
                             </div>
                             <div class="card swiper-slide">
                                 <div class="image-box">
-                                    <img src="../assets/img/equipe/imagN1.jpg" alt="" />
+                                    <img src="../assets/img/jeuour/image_porf.png" alt="" />
                                 </div>
                                 <div class="profile-details">
                                     <div class="name-job">
@@ -312,14 +349,44 @@
 
 
         <!-- ======= Portfolio Section ======= -->
-        <section id="portfolio" class="portfolio">
+        <section id="portfolio" class="portfolio  ">
             <div class="container  albume" data-aos="fade-up">
 
                 <div class="section-title">
-                    <h2>Portfolio</h2>
-                    <h3>Check our <span>Portfolio</span></h3>
+                    <h2>مكتبة الصور</h2>
+                    <h3>مكتبة <span> الصور</span></h3>
                     <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas
                         atque vitae autem.</p>
+                </div>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="../assets/img/equipe/imagN1.jpg" alt="Image 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../assets/img/equipe/imagN2.jpg" alt="Image 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../assets/img/equipe/imagN1.jpg" alt="Image 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../assets/img/equipe/imagN2.jpg" alt="Image 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../assets/img/equipe/imagN1.jpg" alt="Image 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../assets/img/equipe/imagN2.jpg" alt="Image 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../assets/img/equipe/imagN1.jpg" alt="Image 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../assets/img/equipe/imagN2.jpg" alt="Image 1">
+                        </div>
+                        <!-- Ajoutez d'autres diapositives selon vos besoins -->
+                    </div>
+                    <div class="swiper-pagination"></div>
                 </div>
 
 
@@ -334,33 +401,31 @@
         <!-- ======= Clients Section ======= -->
         <section id="clients" class="clients section-bg">
             <div class="container">
-
                 <div class="row">
-
                     <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="../assets/img/clients/client-1.png" class="img-fluid" alt="">
+                        <img src="../assets/img/clients/arig.jpg" class="img-fluid" alt="">
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="../assets/img/clients/client-2.png" class="img-fluid" alt="">
+                        <img src="../assets/img/clients/mobadara.jpg" class="img-fluid" alt="">
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="../assets/img/clients/client-3.png" class="img-fluid" alt="">
+
+                        <img src="../assets/img/clients/jama3a.jpg" class="img-fluid" alt="">
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="../assets/img/clients/client-4.png" class="img-fluid" alt="">
+                        <img src="../assets/img/clients/wizara_chabab.jpg" class="img-fluid" alt="">
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="../assets/img/clients/client-5.png" class="img-fluid" alt="">
+                        <img src="../assets/img/clients/wizara_chabab.jpg" class="img-fluid" alt="">
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="../assets/img/clients/client-6.png" class="img-fluid" alt="">
+                        <img src="../assets/img/clients/wizara_chabab.jpg" class="img-fluid" alt="">
                     </div>
-
                 </div>
 
             </div>
@@ -397,6 +462,18 @@
     <script src="../assets/js/swiper-bundle.min.js"></script>
     <script src="../assets/js/script.js"></script>
 
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 'auto',
+        spaceBetween: 5,
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+    </script>
 </body>
 
 </html>

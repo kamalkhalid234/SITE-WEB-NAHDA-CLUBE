@@ -5,80 +5,80 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>BizLand Bootstrap Template - Index</title>
+    <title>الملف القانوني للجمعية</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
     <?php
     include "../inc/link.php";
     ?>
     <style>
-        h1 {
-            text-align: center;
-            margin-top: 20px;
-            color: #333;
-        }
+    h1 {
+        text-align: center;
+        margin-top: 20px;
+        color: #333;
+    }
 
-        .pdf-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
+    .pdf-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
 
-        .pdf-item {
-            background-color: #fff;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
+    .pdf-item {
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
 
-        .pdf-item h2 {
-            font-size: 1.2em;
-            margin-bottom: 10px;
-            color: #333;
-        }
+    .pdf-item h2 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        color: #333;
+    }
 
-        .pdf-item iframe {
-            width: 100%;
-            border: none;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            height: 300px;
-            /* Adjust the height as necessary */
-        }
+    .pdf-item iframe {
+        width: 100%;
+        border: none;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        height: 300px;
+        /* Adjust the height as necessary */
+    }
 
-        .buttons {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 10px;
-        }
+    .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
 
-        .view-btn,
-        .download-btn {
-            text-decoration: none;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
+    .view-btn,
+    .download-btn {
+        text-decoration: none;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
 
-        .view-btn {
-            background-color: #28a745;
-        }
+    .view-btn {
+        background-color: #28a745;
+    }
 
-        .view-btn:hover {
-            background-color: #218838;
-        }
+    .view-btn:hover {
+        background-color: #218838;
+    }
 
-        .download-btn {
-            background-color: #007BFF;
-        }
+    .download-btn {
+        background-color: #007BFF;
+    }
 
-        .download-btn:hover {
-            background-color: #0056b3;
-        }
+    .download-btn:hover {
+        background-color: #0056b3;
+    }
     </style>
 </head>
 
@@ -93,7 +93,7 @@
         <div class="container" data-aos="fade-up">
             <div class="section-title">
                 <h2>الملف القانوني للجمعية</h2>
-                <h3><span>الملف القانوني للجمعية</span></h3>
+                <h3>الملف القانوني<span> للجمعية</span></h3>
                 <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas
                     atque vitae autem.</p>
             </div>
@@ -166,14 +166,6 @@
             </div>
         </div>
 
-        <div class="container" data-aos="fade-up">
-            <div class="section-title">
-                <h2>لائحة الأعضاء</h2>
-                <h3><span>لائحة الأعضاء</span></h3>
-                <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas
-                    atque vitae autem.</p>
-            </div>
-        </div>
 
 
 

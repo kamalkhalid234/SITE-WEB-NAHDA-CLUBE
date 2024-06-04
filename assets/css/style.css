@@ -463,9 +463,34 @@ h6 {
 #hero {
   width: 100%;
   height: 75vh;
-  background: url("../img/equipe/imagN1.jpg") top;
+  background: url("../img/equipe/imagN2.jpg") top;
   background-size: cover;
   position: relative;
+}
+
+
+.logo-container {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.logo-container img {
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 868px) {
+  .logo-container {
+    position: relative;
+    text-align: center;
+  }
+
+  .logo-container img {
+    width: 40%;
+    /* Ensure the logo doesn't exceed its container */
+  }
 }
 
 
@@ -791,7 +816,7 @@ section {
 }
 
 .clients img {
-  max-width: 45%;
+  max-width: 80%;
   transition: all 0.4s ease-in-out;
   display: inline-block;
   padding: 15px 0;
@@ -960,7 +985,6 @@ section {
 
 
 
-
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
@@ -1092,14 +1116,14 @@ section {
 #footer {
   background: #fff;
   padding: 0 0 30px 0;
-  color: #444444;
+  color: #ffffff;
   font-size: 14px;
-  background: #f1f6fe;
+  background: #106eea;
 }
 
 #footer .footer-newsletter {
   padding: 50px 0;
-  background: #f1f6fe;
+  background: #106eea;
   text-align: center;
   font-size: 15px;
 }
@@ -1150,7 +1174,7 @@ section {
 
 #footer .footer-top {
   padding: 60px 0 30px 0;
-  background: #fff;
+  background: #171e3f;
 }
 
 #footer .footer-top .footer-contact {
@@ -1174,13 +1198,13 @@ section {
   line-height: 24px;
   margin-bottom: 0;
   font-family: "Roboto", sans-serif;
-  color: #777777;
+  color: #ffffff;
 }
 
 #footer .footer-top h4 {
   font-size: 16px;
   font-weight: bold;
-  color: #444444;
+  color: #ffffff;
   position: relative;
   padding-bottom: 12px;
 }
@@ -1213,7 +1237,7 @@ section {
 }
 
 #footer .footer-top .footer-links ul a {
-  color: #777777;
+  color: #fcfcfc;
   transition: 0.3s;
   display: inline-block;
   line-height: 1;
@@ -1254,7 +1278,7 @@ section {
   float: right;
   text-align: center;
   font-size: 13px;
-  color: #444444;
+  color: #f5f5f5;
 }
 
 @media (max-width: 768px) {

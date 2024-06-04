@@ -53,6 +53,8 @@
                         <li><a href="dossier-juridique.php">الملف القانوني للجمعية </a></li>
                         <li><a href="enesemble-generale.php">الجموع العامة</a></li>
                         <li><a href="ensemble-exceptionnels.php">الجموع الإستتنائية</a></li>
+                        <li><a href="mebre.php">لائحة الأعضاء</a></li>
+
                     </ul>
                 </li>
                 <li><a class="nav-link scrollto " href="contact.php">تواصل معنا</a></li>

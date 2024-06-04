@@ -46,8 +46,8 @@
         <section id="contact" class="contact">
             <div class="container" data-aos="fade-up">
                 <div class="section-title">
-                    <h2>Contact</h2>
-                    <h3><span>Contact Us</span></h3>
+                    <h2>اتصل بنا</h2>
+                    <h3><span>اتصل </span>بنا</h3>
                     <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas
                         atque vitae autem.</p>
                 </div>
