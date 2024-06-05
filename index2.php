@@ -92,16 +92,6 @@
                 <img src="assets/img/equipe/imagN1.jpg" />
             </div>
             <div class="swiper-slide">
-                <img src="https://cdn.magloft.com/github/                <img src=" assets/img/equipe/imagN1.jpg" />
-                /images/page-003.jpg" />
-            </div>
-            <div class="swiper-slide">
-                <img src="assets/img/equipe/imagN1.jpg" />
-            </div>
-            <div class="swiper-slide">
-                <img src="https://cdn.magloft.com/github/swiper/images/page-005.jpg" />
-            </div>
-            <div class="swiper-slide">
                 <img src="assets/img/equipe/imagN1.jpg" />
             </div>
             <div class="swiper-slide">
@@ -109,6 +99,16 @@
             </div>
             <div class="swiper-slide">
                 <img src="assets/img/equipe/imagN1.jpg" />
+
+            </div>
+            <div class="swiper-slide">
+                <img src="assets/img/equipe/imagN1.jpg" />
+            </div>
+            <div class="swiper-slide">
+                <img src="assets/img/equipe/imagN1.jpg" />
+            </div>
+            <div class="swiper-slide">
+                <img src="assets/img/equipe/imagN2.jpg" />
             </div>
             <div class="swiper-slide">
                 <img src="assets/img/equipe/imagN1.jpg" />

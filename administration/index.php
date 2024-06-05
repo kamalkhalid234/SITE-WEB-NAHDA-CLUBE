@@ -45,25 +45,14 @@
         margin: 0 auto;
     }
 
-    .swiper-wrapper {
-        display: flex;
-        flex-wrap: nowrap;
-    }
-
     .swiper-slide {
-        flex: 1 0 auto;
-        /* Allows slides to take up the available space */
-        margin-right: 0;
-        /* Removes right margin */
+        width: auto;
+        margin-right: 5;
     }
 
     .swiper-slide img {
         width: 100%;
         height: 50vh;
-        object-fit: cover;
-        /* Ensures the image covers the entire area */
-        display: block;
-        /* Removes any potential inline-space issues */
     }
     </style>
 </head>
@@ -360,9 +349,8 @@
 
 
         <!-- ======= Portfolio Section ======= -->
-        <!-- ======= Portfolio Section ======= -->
-        <section id="portfolio" class="portfolio">
-            <div class="container albume" data-aos="fade-up">
+        <section id="portfolio" class="portfolio  ">
+            <div class="container  albume" data-aos="fade-up">
                 <div class="section-title">
                     <h2>مكتبة الصور</h2>
                     <h3>مكتبة <span> الصور</span></h3>
@@ -375,34 +363,36 @@
                             <img src="../assets/img/equipe/imagN1.jpg" alt="Image 1">
                         </div>
                         <div class="swiper-slide">
-                            <img src="../assets/img/equipe/imagN2.jpg" alt="Image 2">
+                            <img src="../assets/img/equipe/imagN2.jpg" alt="Image 1">
                         </div>
                         <div class="swiper-slide">
-                            <img src="../assets/img/equipe/imagN1.jpg" alt="Image 3">
+                            <img src="../assets/img/equipe/imagN1.jpg" alt="Image 1">
                         </div>
                         <div class="swiper-slide">
-                            <img src="../assets/img/equipe/imagN2.jpg" alt="Image 4">
+                            <img src="../assets/img/equipe/imagN2.jpg" alt="Image 1">
                         </div>
                         <div class="swiper-slide">
-                            <img src="../assets/img/equipe/imagN1.jpg" alt="Image 5">
+                            <img src="../assets/img/equipe/imagN1.jpg" alt="Image 1">
                         </div>
                         <div class="swiper-slide">
-                            <img src="../assets/img/equipe/imagN2.jpg" alt="Image 6">
+                            <img src="../assets/img/equipe/imagN2.jpg" alt="Image 1">
                         </div>
                         <div class="swiper-slide">
-                            <img src="../assets/img/equipe/imagN1.jpg" alt="Image 7">
+                            <img src="../assets/img/equipe/imagN1.jpg" alt="Image 1">
                         </div>
                         <div class="swiper-slide">
-                            <img src="../assets/img/equipe/imagN2.jpg" alt="Image 8">
+                            <img src="../assets/img/equipe/imagN2.jpg" alt="Image 1">
                         </div>
                         <!-- Ajoutez d'autres diapositives selon vos besoins -->
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
+
+
+
+
             </div>
         </section><!-- End Portfolio Section -->
-
-        <!-- End Portfolio Section -->
 
 
 
