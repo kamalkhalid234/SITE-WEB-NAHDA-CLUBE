@@ -32,17 +32,17 @@
                         <li><a href="#"></a></li>
                         <li class="dropdown"><a href="#"><span>كرة القدم </span> <i class="bi bi-chevron-right"></i></a>
                             <ul>
-                                <li><a href="#">الكبار</a></li>
-                                <li><a href="#">الشبان</a></li>
-                                <li><a href="#">الفتيان</a></li>
-                                <li><a href="#">الصغار</a></li>
-                                <li><a href="#">البراعم</a></li>
+                                <li><a href="../administration/sinior.php">الكبار</a></li>
+                                <li><a href="../administration/jinior.php">الشبان</a></li>
+                                <li><a href="../administration/cadi.php">الفتيان</a></li>
+                                <li><a href="../administration/mini.php">الصغار</a></li>
+                                <li><a href="../administration/se_mini.php">البراعم</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">كرة القدم داخل القاعة</a></li>
-                        <li><a href="#">كرة القدم النسوية</a></li>
-                        <li><a href="#">كرة السلة</a></li>
-                        <li><a href="#"> كرة اليد</a></li>
+                        <li><a href="../administration/football_sale.php">كرة القدم داخل القاعة</a></li>
+                        <li><a href="../administration/football_F.php">كرة القدم النسوية</a></li>
+                        <li><a href="../administration/basketball.php">كرة السلة</a></li>
+                        <li><a href="../administration/handball.php"> كرة اليد</a></li>
                     </ul>
                 </li>
                 <li><a class="nav-link scrollto" href="archife.php">أرشيف الجمعية</a></li>

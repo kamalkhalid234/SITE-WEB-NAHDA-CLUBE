@@ -46,23 +46,77 @@
                     atque vitae autem.</p>
                 <div class="support-option shadow">
                     <h2>Faire un Don Bancaire <span class="badge badge-primary">تبرع مصرفي</span></h2>
-                    <p>Pour faire un don par virement bancaire, veuillez utiliser les informations suivantes :</p>
-                    <p><strong>Nom de la Banque :</strong> Banque ABC</p>
-                    <p><strong>Numéro de Compte (RIB) :</strong> 123456789012345678901234</p>
-                    <p><strong>Code IBAN :</strong> FR7612345678901234567890123</p>
-                    <p><strong>Code BIC :</strong> ABCDFRPP</p>
+                    <table class="table table-borderless ">
+                        <tr>
+                            <td><strong>Titulaire :</strong></td>
+                            <td>ASSOCIATION NAHDA SPORTIVE DE CHICHAOUA</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Banque :</strong></td>
+                            <td>AttijariWafa bank</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Domiciliation :</strong></td>
+                            <td>CHICHAOUA <br> IMM.NC 7 ROUTE - NATIONALE AGADIR</td>
+                        <tr>
+                            <td><strong>RIB :</strong></td>
+                            <td>References bancaires</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Banque :</strong></td>
+                            <td>007</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ville :</strong></td>
+                            <td>465</td>
+                        </tr>
+                        <tr>
+                            <td><strong>N de compte :</strong></td>
+                            <td>0008494000301578</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cle RIB :</strong></td>
+                            <td>66</td>
+                        </tr>
+                        <tr>
+                            <td><strong>BIC - Code SWIFT :</strong></td>
+                            <td>BCMAMAMC</td>
+                        </tr>
+                        </tr>
+                    </table>
                 </div>
 
                 <div class="support-option shadow">
-                    <h2>Faire un Don par Chèque <span class="badge badge-primary">تبرع بشيك</span></h2>
-                    <p>Pour faire un don par chèque, veuillez le libeller à l'ordre de <strong>Association XYZ</strong>
-                        et
-                        l'envoyer à l'adresse suivante :</p>
-                    <p>Association XYZ<br>123 Rue de la Solidarité<br>75001 Paris, France</p>
+                    <h2>international Bank <span class="badge badge-primary">international Bank </span></h2>
+
+                    <table class="table table-borderless">
+                        <tr>
+                            <td><strong>RIB :</strong></td>
+                            <td>MA64</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Banque :</strong></td>
+                            <td>007</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ville :</strong></td>
+                            <td>465</td>
+                        </tr>
+                        <tr>
+                            <td><strong>N de compte :</strong></td>
+                            <td>0008494000301578</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cle RIB :</strong></td>
+                            <td>66</td>
+                        </tr>
+                    </table>
+
                 </div>
             </div>
 
         </div>
+
 
     </main><!-- End #main -->
 
