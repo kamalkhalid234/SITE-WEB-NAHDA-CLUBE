@@ -44,7 +44,7 @@
                     </span></h3>
                 <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas
                     atque vitae autem.</p>
-                <div class="support-option">
+                <div class="support-option shadow">
                     <h2>Faire un Don Bancaire <span class="badge badge-primary">تبرع مصرفي</span></h2>
                     <p>Pour faire un don par virement bancaire, veuillez utiliser les informations suivantes :</p>
                     <p><strong>Nom de la Banque :</strong> Banque ABC</p>
@@ -53,7 +53,7 @@
                     <p><strong>Code BIC :</strong> ABCDFRPP</p>
                 </div>
 
-                <div class="support-option">
+                <div class="support-option shadow">
                     <h2>Faire un Don par Chèque <span class="badge badge-primary">تبرع بشيك</span></h2>
                     <p>Pour faire un don par chèque, veuillez le libeller à l'ordre de <strong>Association XYZ</strong>
                         et

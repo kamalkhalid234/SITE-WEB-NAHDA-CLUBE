@@ -102,7 +102,7 @@
                 <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas
                     atque vitae autem.</p>
                 <div class="pdf-grid">
-                    <div class="pdf-item">
+                    <div class="pdf-item shadow">
                         <h2>لائحة المكتب المسير</h2>
                         <iframe src="documents/bureau.pdf" width="100%" height="300px"></iframe>
                         <div class="buttons">
@@ -110,7 +110,7 @@
                             <a href="documents/bureau.pdf" download="bureau" class="download-btn">تحميل</a>
                         </div>
                     </div>
-                    <div class="pdf-item">
+                    <div class="pdf-item shadow">
                         <h2>الوصل النهائي</h2>
                         <iframe src="documents/certificat.pdf" width="100%" height="300px"></iframe>
                         <div class="buttons">
@@ -118,7 +118,7 @@
                             <a href="documents/certificat.pdf" download="certificat" class="download-btn">تحميل</a>
                         </div>
                     </div>
-                    <div class="pdf-item">
+                    <div class="pdf-item shadow">
                         <h2>النظام الاساسي النموذجي للجمعية</h2>
                         <iframe src="documents/droit-primaire.pdf" width="100%" height="300px"></iframe>
                         <div class="buttons">
@@ -127,7 +127,7 @@
                                 class="download-btn">تحميل</a>
                         </div>
                     </div>
-                    <div class="pdf-item">
+                    <div class="pdf-item shadow">
                         <h2>بيان التعريف البنكي</h2>
                         <iframe src="documents/identité.pdf" width="100%" height="300px"></iframe>
                         <div class="buttons">
@@ -135,7 +135,7 @@
                             <a href="documents/identité.pdf" download="identité" class="download-btn">تحميل</a>
                         </div>
                     </div>
-                    <div class="pdf-item">
+                    <div class="pdf-item shadow">
                         <h2>القانون الداخلي للجمعية</h2>
                         <iframe src="documents/lois-domestiques.pdf" width="100%" height="300px"></iframe>
                         <div class="buttons">
@@ -144,7 +144,7 @@
                                 class="download-btn">تحميل</a>
                         </div>
                     </div>
-                    <div class="pdf-item">
+                    <div class="pdf-item shadow">
                         <h2>نموذج إشعار المعرف الضريبي</h2>
                         <iframe src="documents/notification.pdf" width="100%" height="300px"></iframe>
                         <div class="buttons">
@@ -152,7 +152,7 @@
                             <a href="documents/notification.pdf" download="notification" class="download-btn">تحميل</a>
                         </div>
                     </div>
-                    <div class="pdf-item">
+                    <div class="pdf-item shadow">
                         <h2>محضر الجمع العام العادي</h2>
                         <iframe src="documents/procès-verbal.pdf" width="100%" height="300px"></iframe>
                         <div class="buttons">
@@ -161,7 +161,7 @@
                                 class="download-btn">تحميل</a>
                         </div>
                     </div>
-                    <div class="pdf-item">
+                    <div class="pdf-item shadow">
                         <h2>اشهاد</h2>
                         <iframe src="documents/témoignages.pdf" width="100%" height="300px"></iframe>
                         <div class="buttons">

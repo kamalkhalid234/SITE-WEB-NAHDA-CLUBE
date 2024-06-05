@@ -39,7 +39,7 @@
 
                     <div class="container ">
                         <div class="top-content">
-                            <h3>Photo Gallery</h3>
+                            <span>Photo Gallery</span>
                             <label for="check1">كرة القدم</label>
                             <label for="check2">كرة القدم داخل القاعة</label>
                             <label for="check3">كرة القدم النسوية</label>
@@ -49,10 +49,10 @@
                         </div>
 
                         <div class="photo-gallery">
-                            <div class="pic place">
+                            <div class="pic place ">
                                 <img src="../assets/img/equipe/imagN1.jpg" alt="">
                             </div>
-                            <div class="pic family">
+                            <div class="pic family ">
                                 <img src="../assets/img/equipe/imagN2.jpg" alt="">
                             </div>
                             <div class="pic child">

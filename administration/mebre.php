@@ -97,8 +97,8 @@
                     atque vitae autem.</p>
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="card mb-3">
+                        <div class="col-md-4 ">
+                            <div class="card mb-3 shadow">
                                 <img src="../assets/img/personnel/lbadi.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
@@ -106,8 +106,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="card mb-3">
+                        <div class="col-md-4 ">
+                            <div class="card mb-3 shadow">
                                 <img src="../assets/img/personnel/lbadi.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
@@ -116,8 +116,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="card mb-3">
+                        <div class="col-md-4 ">
+                            <div class="card mb-3 shadow">
                                 <img src="../assets/img/personnel/lbadi.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
@@ -126,8 +126,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="card mb-3">
+                        <div class="col-md-4 ">
+                            <div class="card mb-3 shadow">
                                 <img src="../assets/img/personnel/lbadi.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
@@ -136,8 +136,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="card mb-3">
+                        <div class="col-md-4 ">
+                            <div class="card mb-3 shadow">
                                 <img src="../assets/img/personnel/lbadi.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
@@ -146,8 +146,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="card mb-3">
+                        <div class="col-md-4 ">
+                            <div class="card mb-3 shadow">
                                 <img src="../assets/img/personnel/lbadi.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>

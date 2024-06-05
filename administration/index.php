@@ -54,6 +54,41 @@
         width: 100%;
         height: 50vh;
     }
+
+    .h-font {
+        font-family: 'Meriend', cursive;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+
+    .custom-bg {
+        background-color: var(--teal);
+        border: 1px solid --teal
+    }
+
+    /* .custom-bg:hover {
+        background-color: var(--teal_hover);
+        border-color: var(--teal_hover);
+    } */
+
+
+    .h-line {
+        width: 150px;
+        margin: 0 auto;
+        height: 1.7px;
+    }
+
+
+    .pop:hover {
+        border-top-color: #007bff !important;
+        transform: scale(1.06);
+        transition: all 0.3s;
+    }
     </style>
 </head>
 
@@ -77,7 +112,7 @@
                         class="bi bi-play-circle"></i><span>Watch Video</span></a>
             </div>
             <div class="logo-container">
-                <img src="../assets/img/logo.png" alt="">
+                <img src="../assets/img/logo.png" class="shadow" alt="">
             </div>
 
     </section><!-- End Hero -->
@@ -95,29 +130,40 @@
                 </div>
 
                 <div class="row justify-content-center">
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon"><i class="bx bx-football"></i></div>
-                            <h4 class="title"><a href="">كرة القدم </a></h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                excepturi</p>
+                    <!-- scale 2 -->
+                    <div class="col-lg-4 col-md-6 mb-5 px-4 ">
+                        <div class="bg-white rounded  shadow p-4 border-top border-3 border-dark pop">
+                            <div class="d-flex align-items-center mb-2">
+                                <img src="../assets/img/icon/handball.png" width="70px" alt="">
+                                <h5 class="m-0 ms-3">
+                                    كرة اليد</h5>
+                            </div>
+                            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-                            <div class="icon"><i class="bx bx-basketball"></i></div>
-                            <h4 class="title"><a href="">كرة السلة</a></h4>
-                            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                                blanditiis</p>
+                    <!-- scale 2 -->
+                    <div class="col-lg-4 col-md-6 mb-5 px-4 ">
+                        <div class="bg-white rounded  shadow p-4 border-top border-3 border-dark pop">
+                            <div class="d-flex align-items-center mb-2">
+                                <img src="../assets/img/icon/basketball.png" width="70px" alt="">
+                                <h5 class="m-0 ms-3">
+                                    كرة السلة</h5>
+                            </div>
+                            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi
+                            </p>
                         </div>
                     </div>
+                    <!-- scale 2 -->
+                    <div class="col-lg-4 col-md-6 mb-5 px-4 ">
+                        <div class="bg-white rounded  shadow p-4 border-top border-3 border-dark pop">
+                            <div class="d-flex align-items-center mb-2">
+                                <img src="../assets/img/icon/football.png" width="70px" alt="">
+                                <h5 class="m-0 ms-3">
+                                    كرة القدم</h5>
+                            </div>
+                            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi
 
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-                            <div class="icon"><i class="bx bx-tennis-ball"></i></div>
-                            <h4 class="title"><a href="">كرة اليد</a></h4>
-                            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                                blanditiis</p>
+                            </p>
                         </div>
                     </div>
 
@@ -140,68 +186,23 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-                        <img src="../assets/img/equipe/imagN1.jpg" class="img-fluid" alt="">
+                    <div class="col-lg-6">
+                        <img src="../assets/img/equipe/imagN1.jpg" class="img-fluid shadow" alt=""
+                            style="width: 100%; height: 60vh;">
                     </div>
-                    <div class="col-lg-6 mx-auto pt-5 pt-lg-3 content d-flex flex-column justify-content-center">
-                        <table class="table table-hover table-bordered tajarib">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Image</th>
-                                    <th>Team Name</th>
-                                    <th>Rating</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td><img src="../assets/img/logo.png" alt="Team A"></td>
-                                    <td>Team A</td>
-                                    <td>8.5</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td><img src="../assets/img/logo.png" alt="Team B"></td>
-                                    <td>Team B</td>
-                                    <td>7.9</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td><img src="../assets/img/logo.png" alt="Team C"></td>
-                                    <td>Team C</td>
-                                    <td>9.1</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td><img src="../assets/img/logo.png" alt="Team D"></td>
-                                    <td>Team D</td>
-                                    <td>6.8</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td><img src="../assets/img/logo.png" alt="Team A"></td>
-                                    <td>Team A</td>
-                                    <td>8.5</td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td><img src="../assets/img/logo.png" alt="Team B"></td>
-                                    <td>Team B</td>
-                                    <td>7.9</td>
-                                </tr>
-                                <tr>
-                                    <td>7</td>
-                                    <td><img src="../assets/img/logo.png" alt="Team C"></td>
-                                    <td>Team C</td>
-                                    <td>9.1</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                    <div class="col-lg-6">
+                        <div class="card shadow">
+                            <img src="../assets/img/classmen/tit.jpg" class="img-fluid shadow" alt=""
+                                style="width: 100%; height: 60vh;">
+                            <div class="card-body">
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                            </div>
+                        </div>
 
-            </div>
+                    </div>
+
+                </div>
         </section>
         <!-- End About Section -->
 
@@ -221,8 +222,8 @@
 
                 <div class="row">
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
-                        data-aos-delay="200">
-                        <div class="card">
+                        data-aos-delay="100">
+                        <div class="card border-0 shadow">
                             <img src="../assets/img/equipe/imagN1.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
@@ -236,7 +237,7 @@
 
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in"
                         data-aos-delay="300">
-                        <div class="card">
+                        <div class="card border-0 shadow">
                             <img src="../assets/img/equipe/imagN1.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
@@ -249,7 +250,7 @@
                     </div>
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in"
                         data-aos-delay="400">
-                        <div class="card">
+                        <div class="card border-0 shadow">
                             <img src="../assets/img/equipe/imagN1.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
@@ -266,7 +267,6 @@
         </section>
 
         <!-- End Services Section -->
-
         <!-- ======= Team Section ======= -->
         <section id="team" class="team section-bg">
             <div class="container" data-aos="fade-up">
@@ -281,58 +281,60 @@
                 <div class="container swiper">
                     <div class="slide-container">
                         <div class="card-wrapper swiper-wrapper">
-                            <div class="card swiper-slide">
+
+                            <div class="card swiper-slide shadow ">
                                 <div class="image-box">
-                                    <img src="../assets/img/jeuour/image_porf.png" alt="" />
+                                    <img src="../assets/img/jeuour/image_por.jpg" alt="" />
                                 </div>
                                 <div class="profile-details">
                                     <div class="name-job">
                                         <h3 class="name">David Cardlos</h3>
-                                        <h4 class="job">Full Stack Developer</h4>
+                                        <h4 class="job">2</h4>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card swiper-slide">
-                                <div class="image-box">
-                                    <img src="../assets/img/jeuour/image_porf.png" alt="" />
+                            <div class="card swiper-slide shadow ">
+                                <div class="image-box ">
+                                    <img src="../assets/img/jeuour/image_por.jpg" alt="" />
                                 </div>
                                 <div class="profile-details">
                                     <div class="name-job">
                                         <h3 class="name">Siliana Ramis</h3>
-                                        <h4 class="job">Photographer</h4>
+                                        <h4 class="job">1</h4>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card swiper-slide">
+
+                            <div class="card swiper-slide shadow">
                                 <div class="image-box">
-                                    <img src="../assets/img/jeuour/image_porf.png" alt="" />
+                                    <img src="../assets/img/jeuour/image_por.jpg" alt="" />
                                 </div>
                                 <div class="profile-details">
                                     <div class="name-job">
                                         <h3 class="name">Richard Bond</h3>
-                                        <h4 class="job">Data Analyst</h4>
+                                        <h4 class="job">3</h4>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card swiper-slide">
+                            <div class="card swiper-slide shadow">
                                 <div class="image-box">
-                                    <img src="../assets/img/jeuour/image_porf.png" alt="" />
+                                    <img src="../assets/img/jeuour/image_por.jpg" alt="" />
                                 </div>
                                 <div class="profile-details">
                                     <div class="name-job">
                                         <h3 class="name">Priase</h3>
-                                        <h4 class="job">App Developer</h4>
+                                        <h4 class="job">4</h4>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card swiper-slide">
+                            <div class="card swiper-slide shadow">
                                 <div class="image-box">
-                                    <img src="../assets/img/jeuour/image_porf.png" alt="" />
+                                    <img src="../assets/img/jeuour/image_por.jpg" alt="" />
                                 </div>
                                 <div class="profile-details">
                                     <div class="name-job">
                                         <h3 class="name">James Laze</h3>
-                                        <h4 class="job">Blogger</h4>
+                                        <h4 class="job">5</h4>
                                     </div>
                                 </div>
                             </div>
@@ -359,28 +361,28 @@
                 </div>
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
+                        <div class="swiper-slide shadow ">
                             <img src="../assets/img/equipe/imagN1.jpg" alt="Image 1">
                         </div>
-                        <div class="swiper-slide">
+                        <div class="swiper-slide shadow">
                             <img src="../assets/img/equipe/imagN2.jpg" alt="Image 1">
                         </div>
-                        <div class="swiper-slide">
+                        <div class="swiper-slide shadow">
                             <img src="../assets/img/equipe/imagN1.jpg" alt="Image 1">
                         </div>
-                        <div class="swiper-slide">
+                        <div class="swiper-slide shadow">
                             <img src="../assets/img/equipe/imagN2.jpg" alt="Image 1">
                         </div>
-                        <div class="swiper-slide">
+                        <div class="swiper-slide shadow">
                             <img src="../assets/img/equipe/imagN1.jpg" alt="Image 1">
                         </div>
-                        <div class="swiper-slide">
+                        <div class="swiper-slide shadow">
                             <img src="../assets/img/equipe/imagN2.jpg" alt="Image 1">
                         </div>
-                        <div class="swiper-slide">
+                        <div class="swiper-slide shadow">
                             <img src="../assets/img/equipe/imagN1.jpg" alt="Image 1">
                         </div>
-                        <div class="swiper-slide">
+                        <div class="swiper-slide shadow">
                             <img src="../assets/img/equipe/imagN2.jpg" alt="Image 1">
                         </div>
                         <!-- Ajoutez d'autres diapositives selon vos besoins -->
@@ -398,6 +400,7 @@
 
 
         <!-- ======= Clients Section ======= -->
+        <!-- ======= Clients Section ======= -->
         <section id="clients" class="clients section-bg">
             <div class="container">
                 <div class="row">
@@ -405,30 +408,31 @@
                         <img src="../assets/img/clients/arig.jpg" class="img-fluid" alt="">
                     </div>
 
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center ">
                         <img src="../assets/img/clients/mobadara.jpg" class="img-fluid" alt="">
                     </div>
 
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-
+                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center ">
                         <img src="../assets/img/clients/jama3a.jpg" class="img-fluid" alt="">
                     </div>
 
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center ">
                         <img src="../assets/img/clients/wizara_chabab.jpg" class="img-fluid" alt="">
                     </div>
 
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center ">
                         <img src="../assets/img/clients/wizara_chabab.jpg" class="img-fluid" alt="">
                     </div>
 
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center ">
                         <img src="../assets/img/clients/wizara_chabab.jpg" class="img-fluid" alt="">
                     </div>
                 </div>
-
             </div>
         </section><!-- End Clients Section -->
+
+
+        <!-- End Clients Section -->
 
 
     </main><!-- End #main -->

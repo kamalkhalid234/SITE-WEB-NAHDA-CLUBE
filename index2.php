@@ -2,156 +2,197 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <title>Swiper demo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-    <!-- Link Swiper's CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- lies css bootrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <!-- hhhh -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+
+    <!-- lien texte -->
+    <!-- linkfonte -->
+
+
+    <!-- IMAGE Use Swiper from CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <!-- Demo styles -->
+    <!-- lien css -->
+    <link rel="stylesheet" href="css/common.css">
+    <title>Document</title>
     <style>
-    html,
-    body {
-        position: relative;
-        height: 100%;
+    :root {
+        --teal: #2ec1ac;
+        --teal_hover: #279e8c;
     }
 
-    body {
-        background: #eee;
-        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-        font-size: 14px;
-        color: #000;
+
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+
+
+    .h-font {
+        font-family: 'Meriend', cursive;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
         margin: 0;
-        padding: 0;
     }
 
-    .swiper {
-        width: 100%;
-        height: 100%;
+
+    .custom-bg {
+        background-color: var(--teal);
+        border: 1px solid --teal
     }
 
-    .swiper-slide {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        position: relative;
+    .custom-bg:hover {
+        background-color: var(--teal_hover);
+        border-color: var(--teal_hover);
     }
 
-    .swiper-slide img {
-        display: block;
-        width: 100%;
+
+    .h-line {
+        width: 150px;
+        margin: 0 auto;
+        height: 1.7px;
     }
 
-    @media only screen and (min-width: 769px) {
-        .swiper-slide:first-child {
-            transition: transform 100ms;
-        }
 
-        .swiper-slide:first-child img {
-            transition: box-shadow 500ms;
-        }
-
-        .swiper-slide.swiper-slide-active:first-child {
-            transform: translateX(50%);
-            z-index: 2;
-        }
-
-        .swiper-slide.swiper-slide-active:first-child img {
-            box-shadow: 0px 32px 80px rgba(0, 0, 0, 0.35);
-        }
-
-        .swiper-slide:nth-child(2) {
-            transition: transform 100ms;
-        }
-
-        .swiper-slide.swiper-slide-next:nth-child(2) {
-            transform: translateX(55%);
-            z-index: 1;
-        }
-
-        .swiper[dir="rtl"] .swiper-slide.swiper-slide-active:first-child {
-            transform: translateX(-50%);
-        }
-
-        .swiper[dir="rtl"] .swiper-slide.swiper-slide-next:nth-child(2) {
-            transform: translateX(-55%);
-        }
+    .pop:hover {
+        border-top-color: #2ec1ac !important;
+        transform: scale(1.03);
+        transition: all 0.3s;
     }
     </style>
 </head>
 
 <body>
-    <!-- Swiper -->
-    <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <img src="assets/img/equipe/imagN1.jpg" />
-            </div>
-            <div class="swiper-slide">
-                <img src="assets/img/equipe/imagN1.jpg" />
-            </div>
-            <div class="swiper-slide">
-                <img src="assets/img/equipe/imagN1.jpg" />
-            </div>
-            <div class="swiper-slide">
-                <img src="assets/img/equipe/imagN1.jpg" />
-            </div>
-            <div class="swiper-slide">
-                <img src="assets/img/equipe/imagN1.jpg" />
+    <div class="container">
+        <div class="row">
+            <!-- cards -->
+            <dic class="col-lg-4 col-md-6 my-3">
+                <div class="card border-0 shadow" style="max-width: 350px; margin:auto;">
+                    <img src="images/rooms/1.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5>Simple Room Name</h5>
+                        <h6 class="mb-4">DH 200 per night</h6>
+                        <div class="features mb-4">
+                            <h6 class="mb-1">Features</h6>
 
-            </div>
-            <div class="swiper-slide">
-                <img src="assets/img/equipe/imagN1.jpg" />
-            </div>
-            <div class="swiper-slide">
-                <img src="assets/img/equipe/imagN1.jpg" />
-            </div>
-            <div class="swiper-slide">
-                <img src="assets/img/equipe/imagN2.jpg" />
-            </div>
-            <div class="swiper-slide">
-                <img src="assets/img/equipe/imagN1.jpg" />
+                        </div>
+                        <div class="d-flex justify-content-evenly mb-2 ">
+                            <a href="#" class="btn btn-sm text-white custom-bg shadow-non ">Book Now</a>
+                            <a href="#" class="btn btn-sm btn-outline-dark shadow-non ">More
+                                details</a>
+                        </div>
+                    </div>
+                </div>
+            </dic>
+            <!-- cards -->
+            <dic class="col-lg-4 col-md-6 my-3">
+                <div class="card border-0 shadow" style="max-width: 350px; margin:auto;">
+                    <img src="images/rooms/1.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5>Simple Room Name</h5>
+                        <h6 class="mb-4">DH 200 per night</h6>
+                        <div class="features mb-4">
+                            <h6 class="mb-1">Features</h6>
+
+                        </div>
+                        <div class="d-flex justify-content-evenly mb-2 ">
+                            <a href="#" class="btn btn-sm text-white custom-bg shadow-non ">Book Now</a>
+                            <a href="#" class="btn btn-sm btn-outline-dark shadow-non ">More
+                                details</a>
+                        </div>
+                    </div>
+                </div>
+            </dic>
+            <!-- cards -->
+            <dic class="col-lg-4 col-md-6 my-3">
+                <div class="card border-0 shadow" style="max-width: 350px; margin:auto;">
+                    <img src="images/rooms/1.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5>Simple Room Name</h5>
+                        <h6 class="mb-4">DH 200 per night</h6>
+                        <div class="features mb-4">
+                            <h6 class="mb-1">Features</h6>
+
+                        </div>
+                        <div class="d-flex justify-content-evenly mb-2 ">
+                            <a href="#" class="btn btn-sm text-white custom-bg shadow-non ">Book Now</a>
+                            <a href="#" class="btn btn-sm btn-outline-dark shadow-non ">More
+                                details</a>
+                        </div>
+                    </div>
+                </div>
+            </dic>
+            <div class="col-lg-12 text-center mt-5">
+                <a href="#" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">More Rooms > > > </a>
             </div>
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-scrollbar"></div>
-        <div class="swiper-pagination"></div>
     </div>
 
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <!-- Initialize Swiper -->
-    <script>
-    var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 1,
-        centeredSlides: false,
-        slidesPerGroupSkip: 1,
-        grabCursor: true,
-        keyboard: {
-            enabled: true,
-        },
-        breakpoints: {
-            769: {
-                slidesPerView: 2,
-                slidesPerGroup: 2,
-            },
-        },
-        scrollbar: {
-            el: ".swiper-scrollbar",
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-    });
+    <div class="container">
+        <div class="row">
+
+            <!-- scale 2 -->
+            <div class="col-lg-4 col-md-6 mb-5 px-4 ">
+                <div class="bg-white rounded  shadow p-4 border-top border-3 border-dark pop">
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="$path/$row[icon]" width="40px" alt="">
+                        <h5 class="m-0 ms-3">
+                            كرة اليد</h5>
+                    </div>
+                    <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                </div>
+            </div>
+            <!-- scale 2 -->
+            <div class="col-lg-4 col-md-6 mb-5 px-4 ">
+                <div class="bg-white rounded  shadow p-4 border-top border-3 border-dark pop">
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="$path/$row[icon]" width="40px" alt="">
+                        <h5 class="m-0 ms-3">
+                            كرة السلة</h5>
+                    </div>
+                    <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi
+                    </p>
+                </div>
+            </div>
+            <!-- scale 2 -->
+            <div class="col-lg-4 col-md-6 mb-5 px-4 ">
+                <div class="bg-white rounded  shadow p-4 border-top border-3 border-dark pop">
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="$path/$row[icon]" width="40px" alt="">
+                        <h5 class="m-0 ms-3">
+                            كرة القدم</h5>
+                    </div>
+                    <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi
+
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- lien Bundle nav-bar -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
+
 </body>
 
 </html>

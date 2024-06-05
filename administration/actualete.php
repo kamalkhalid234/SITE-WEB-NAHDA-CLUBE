@@ -59,9 +59,9 @@
 
         <!-- Modal pour afficher l'actualité complète -->
         <div class="modal fade" id="newsModal" tabindex="-1" aria-labelledby="newsModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
+            <div class="modal-dialog modal-lg ">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header ">
                         <h5 class="modal-title" id="newsModalLabel">Titre de l'Actualité</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
@@ -128,7 +128,7 @@
         newsList.innerHTML = '';
         news.forEach((item, index) => {
             const newsCard = `
-                    <div class="col-md-4 news-card" data-toggle="modal" data-target="#newsModal" data-index="${index}">
+                    <div class="col-md-4 card border-0  shadow" data-toggle="modal" data-target="#newsModal" data-index="${index}">
                         <div class="card">
                             <img src="${item.image}" class="card-img-top" alt="${item.title}">
                             <div class="card-body">
