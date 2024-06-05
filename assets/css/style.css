@@ -1223,3 +1223,21 @@ section {
   font-size: 13px;
   color: #fff;
 }
+
+
+/* Styles spécifiques pour un zoom de 120% */
+@media screen and (max-width: 1500px) {
+
+  /* Par exemple, ajustez la taille de la police pour qu'elle soit plus grande */
+  body {
+    font-size: 80%;
+  }
+
+  /* Ajustez la largeur de certains éléments pour s'adapter à la taille du texte agrandi */
+  .container {
+    width: 90%;
+    max-width: 1400px;
+  }
+
+  /* Ajustez d'autres éléments selon les besoins de votre mise en page */
+}
