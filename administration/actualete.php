@@ -106,19 +106,19 @@
     const news = [{
             title: "Nouvelle Initiative",
             date: "10 Janvier 2024",
-            image: "../assets/img/clients/client-3.png",
+            image: "../assets/img/equipe/imagN1.jpg",
             content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed...Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed...Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed...Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed... "
         },
         {
             title: "Événement à Venir",
             date: "15 Février 2024",
-            image: "../assets/img/clients/client-4.png",
+            image: "../assets/img/equipe/imagN1.jpg",
             content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed... "
         },
         {
             title: "Réunion Importante",
             date: "20 Mars 2024",
-            image: "../assets/img/clients/client-5.png",
+            image: "../assets/img/equipe/imagN1.jpg",
             content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed... "
         }
     ];
