@@ -1,3 +1,57 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "association";
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// Création de la connexion
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Vérification de la connexion
+if ($conn->connect_error) {
+    die("Échec de la connexion : " . $conn->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Récupération des données du formulaire
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+    $created_at = date("Y-m-d H:i:s");
+
+    // Préparation de la requête SQL pour insérer les données
+    $sql = "INSERT INTO messages (name, email, subject, message, created_at) VALUES (?, ?, ?, ?, ?)";
+
+    // Utilisation de prepared statement pour éviter les injections SQL
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sssss", $name, $email, $subject, $message, $created_at);
+
+    // Exécution de la requête
+    if ($stmt->execute()) {
+        echo "<script> alert ('Your message has been sent. Thank you!')</script>";
+    } else {
+        echo "<script> alert ('Error: " . $sql . "<br>" . $conn->error . "')</script>";
+    }
+
+    // Fermeture du statement
+    $stmt->close();
+}
+
+// Récupérer les informations de contact
+$contact_sql = "SELECT * FROM contact_info";
+$contact_result = $conn->query($contact_sql);
+
+// Récupérer les informations de contact liées à la carte
+$map_sql = "SELECT * FROM contact_info WHERE type = 'map'";
+$map_result = $conn->query($map_sql);
+
+// Fermeture de la connexion
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +69,7 @@
 
     <!-- Google Fonts -->
     <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i"
         rel="stylesheet">
 
 
@@ -48,74 +102,59 @@
                 <div class="section-title">
                     <h2>اتصل بنا</h2>
                     <h3><span>اتصل </span>بنا</h3>
-                    <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas
-                        atque vitae autem.</p>
                 </div>
 
                 <div class="row" data-aos="fade-up" data-aos-delay="100">
-                    <div class="col-lg-6 ">
-                        <div class="info-box mb-4 shadow">
-                            <i class="bx bx-map"></i>
-                            <h3>Our Address</h3>
-                            <p>A108 Adam Street, New York, NY 535022</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 ">
-                        <div class="info-box  mb-4 shadow">
-                            <i class="bx bx-envelope"></i>
-                            <h3>Email Us</h3>
-                            <p>contact@example.com</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 ">
-                        <div class="info-box  mb-4 shadow">
-                            <i class="bx bx-phone-call"></i>
-                            <h3>Call Us</h3>
-                            <p>+1 5589 55488 55</p>
-                        </div>
-                    </div>
+                <?php
+                    if ($contact_result->num_rows > 0) {
+                        while ($row = $contact_result->fetch_assoc()) {
+                            echo '<div class="col-lg-6 ">
+                                    <div class="info-box mb-4 shadow">
+                                        <i class="bx ' . $row["icon"] . '"></i>
+                                        <h3>' . $row["title"] . '</h3>
+                                        <p>' . $row["value"] . '</p>
+                                    </div>
+                                </div>';
+                        }
+                    } else {
+                        echo "Aucune information de contact disponible.";
+                    }
+                    ?>
 
                 </div>
 
                 <div class="row" data-aos="fade-up" data-aos-delay="100">
 
-                    <div class="col-lg-6  ">
-                        <!-- <iframe class="mb-4 mb-lg-0 shadow"
-                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
-                            frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe> -->
-                        <iframe class="mb-4 mb-lg-0 shadow"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3400.4697666608167!2d-8.767920073837763!3d31.538719996234345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdae3da0a13d5c75%3A0x40a87c11c5232922!2zQXNzb2NpYXRpb24gQVJJSiDYrNmF2LnZitipINij2LHZitis!5e0!3m2!1sfr!2sma!4v1717628068688!5m2!1sfr!2sma"
-                            frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
-                    </div>
+<?php if ($map_result->num_rows > 0) {
+    // Affichage de la carte Google Maps
+    $row = $map_result->fetch_assoc();
+    echo '<div class="col-lg-6">';
+    echo '<iframe class="mb-4 mb-lg-0 shadow" src="' . $row['map_url'] . '" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>';
+    echo '</div>';
+} else {
+    echo "Aucune information de carte disponible.";
+} ?>
+
 
                     <div class="col-lg-6 ">
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form shadow">
-                            <div class="row">
-                                <div class="col form-group">
-                                    <input type="text" name="name" class="form-control" id="name"
-                                        placeholder="Your Name" required>
-                                </div>
-                                <div class="col form-group">
-                                    <input type="email" class="form-control" name="email" id="email"
-                                        placeholder="Your Email" required>
-                                </div>
+                        <form action="" method="post" class="shadow p-4">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
                             </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="subject" id="subject"
-                                    placeholder="Subject" required>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Your Email</label>
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
                             </div>
-                            <div class="form-group">
-                                <textarea class="form-control" name="message" rows="5" placeholder="Message"
-                                    required></textarea>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
                             </div>
-                            <div class="my-3">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" name="message" id="message" rows="5" placeholder="Message" required></textarea>
                             </div>
-                            <div class="text-center"><button type="submit">Send Message</button></div>
+                            <div class="text-center"><button type="submit" class="btn btn-primary">Send Message</button></div>
                         </form>
                     </div>
 
@@ -141,9 +180,8 @@
     <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
     <script src="../assets/vendor/php-email-form/validate.js"></script>
 
-    <!-- Template Main JS File -->
-    <script src="../assets/js/main.js"></script>
+    <!-- TemplateMain JS File -->
+<script src="../assets/js/main.js"></script>
 
 </body>
-
 </html>

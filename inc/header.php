@@ -1,17 +1,51 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "association";
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// Création de la connexion
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Vérification de la connexion
+if ($conn->connect_error) {
+    die("Échec de la connexion : " . $conn->connect_error);
+}
+
+// Récupérer les informations de contact
+$email_sql = "SELECT * FROM contact_info WHERE type = 'email'";
+$email_result = $conn->query($email_sql);
+
+// Récupérer les informations de contact
+$phone_sql = "SELECT * FROM contact_info WHERE type = 'phone'";
+$phone_result = $conn->query($phone_sql);
+
+// Récupérer les liens sociaux
+$social_sql = "SELECT * FROM social_links";
+$social_result = $conn->query($social_sql);
+
+$conn->close();
+?>
 <!-- ======= Top Bar ======= -->
 <section id="topbar" class="d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
-            <i class="bi bi-envelope d-flex align-items-center"><a
-                    href="mailto:contact@example.com">contact@example.com</a></i>
-            <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
+        <?php while ($email_row = $email_result->fetch_assoc()): ?>
+            <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com"><?= $email_row['value'] ?></a></i>
+        <?php endwhile; ?>
+        <?php while ($phone_row = $phone_result->fetch_assoc()): ?>
+            <i class="bi bi-phone d-flex align-items-center ms-4"><span><?= $phone_row['value'] ?></span></i>
+        <?php endwhile; ?>
         </div>
         <div class="social-links d-none d-md-flex align-items-center">
-            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
-        </div>
+        <?php while ($social_row = $social_result->fetch_assoc()): ?>
+            <a href="<?= $social_row['url'] ?>" class="<?= $social_row['platform'] ?>">
+                <i class="<?= $social_row['icon'] ?>"></i>
+            </a>
+        <?php endwhile; ?>
+    </div>
     </div>
 </section>
 
@@ -19,7 +53,7 @@
 <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
 
-        <h1 class="logo"><a href="index.html"><span>NAHDA</span></a>
+        <h1 class="logo"><a href="index.html"><span>R.S.C</span></a>
         </h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt=""></a>-->

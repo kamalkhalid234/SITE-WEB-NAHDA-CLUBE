@@ -8,9 +8,7 @@
     <title>لائحة الأعضاء</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
-    <?php
-    include "../inc/link.php";
-    ?>
+    <?php include "../inc/link.php"; ?>
     <style>
     h1 {
         text-align: center;
@@ -45,7 +43,6 @@
         margin-bottom: 10px;
         border: 1px solid #ccc;
         height: 300px;
-        /* Adjust the height as necessary */
     }
 
     .buttons {
@@ -84,7 +81,6 @@
 
 <body>
 
-
     <!-- ======= Header ======= -->
     <?php include "../inc/header.php"; ?>
     <!-- End Header -->
@@ -93,82 +89,55 @@
             <div class="section-title">
                 <h2>لائحة الأعضاء</h2>
                 <h3>لائحة<span> الأعضاء</span></h3>
-                <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas
-                    atque vitae autem.</p>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4 ">
-                            <div class="card mb-3 shadow">
-                                <img src="../assets/img/personnel/lbadi.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build .</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 ">
-                            <div class="card mb-3 shadow">
-                                <img src="../assets/img/personnel/lbadi.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build
-                                        .</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 ">
-                            <div class="card mb-3 shadow">
-                                <img src="../assets/img/personnel/lbadi.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 ">
-                            <div class="card mb-3 shadow">
-                                <img src="../assets/img/personnel/lbadi.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 ">
-                            <div class="card mb-3 shadow">
-                                <img src="../assets/img/personnel/lbadi.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 ">
-                            <div class="card mb-3 shadow">
-                                <img src="../assets/img/personnel/lbadi.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <?php
+                    // Connexion à la base de données
+                    $servername = "localhost";
+                    $username = "root";
+                    $password = "";
+                    $database = "association";
+
+                    $conn = new mysqli($servername, $username, $password, $database);
+
+                    if ($conn->connect_error) {
+                        die("Connection failed: " . $conn->connect_error);
+                    }
+                    error_reporting(E_ALL);
+                    ini_set('display_errors', 1);
+
+                    // Requête SQL pour sélectionner les membres et leurs rôles
+                    $sql = "SELECT members.name, members.image, member_roles.role_name 
+                            FROM members 
+                            JOIN member_roles ON members.role_id = member_roles.id";
+                    $result = $conn->query($sql);
+
+                    if ($result->num_rows > 0) {
+                        // Affichage des membres
+                        while ($row = $result->fetch_assoc()) {
+                            echo '<div class="col-md-4">';
+                            echo '<div class="card mb-3 shadow">';
+                            echo '<img src="../admin//uploads/image/' . $row["image"] . '" class="card-img-top" alt="' . $row["name"] . '">';
+                            echo '<div class="card-body">';
+                            echo '<h5 class="card-title">' . $row["name"] . '</h5>';
+                            echo '<p class="card-text">' . $row["role_name"] . '</p>';
+                            echo '</div>';
+                            echo '</div>';
+                            echo '</div>';
+                        }
+                    } else {
+                        echo '<p>No members found.</p>';
+                    }
+                    $conn->close();
+                    ?>
                 </div>
             </div>
         </div>
-
-
-
-
-
     </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->
-
     <?php include "../inc/footer.php"; ?>
     <!-- End Footer -->
 

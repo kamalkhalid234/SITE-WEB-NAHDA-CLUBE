@@ -1,3 +1,47 @@
+<?php
+session_start();
+
+// Connexion à la base de données
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "association";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Vérifier la connexion
+if ($conn->connect_error) {
+    die("Connexion échouée: " . $conn->connect_error);
+}
+
+$message = '';
+
+if (isset($_POST['login'])) {
+    $admin_name = $_POST['admin_name'];
+    $admin_pass = $_POST['admin_pass'];
+
+    $sql = "SELECT * FROM admin WHERE name = ?";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows === 1) {
+        while ($admin = $result->fetch_assoc()) {
+            $_SESSION['admin_id'] = $admin['id'];
+            $_SESSION['admin_name'] = $admin['name'];
+            header("Location: home.php");
+            exit();
+        }
+        } else {
+            $message = "Nom d'utilisateur ou mot de passe incorrect.";
+        }
+    } else {
+        $message = "Nom d'utilisateur ou mot de passe incorrect.";
+    }
+
+    $stmt->close();
+
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,6 +73,9 @@
         <form method="POST">
             <h4 class="bg-dark text-white py-3">ADMIN LOGIN PANEL</h4>
             <div class="p-5">
+                <?php if (!empty($message)): ?>
+                    <div class="alert alert-danger custom-alert"><?php echo $message; ?></div>
+                <?php endif; ?>
                 <div class="mb-3">
                     <input name="admin_name" required type="text" class="form-control shadow-none text-center"
                         placeholder="Admin Name">
@@ -41,6 +88,7 @@
                     style="background-color: #dc3545; color: white;">LOGIN</button>
             </div>
         </form>
+    </div>
 </body>
 
 </html>

@@ -11,25 +11,25 @@
 
 
     <?php
-    include "../inc/link.php";
+    include "../inc/link.php"; // Assurez-vous que ce fichier contient les liens CSS et autres
     ?>
     <style>
-    body {
-        font-family: Arial, sans-serif;
-    }
+        body {
+            font-family: Arial, sans-serif;
+        }
 
-    .news-card {
-        margin-bottom: 20px;
-        cursor: pointer;
-    }
+        .news-card {
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
 
-    .social-icons {
-        margin-top: 20px;
-    }
+        .social-icons {
+            margin-top: 20px;
+        }
 
-    .social-icons a {
-        margin-right: 10px;
-    }
+        .social-icons a {
+            margin-right: 10px;
+        }
     </style>
 </head>
 
@@ -41,12 +41,8 @@
 
         <div class="container" data-aos="fade-up">
             <div class="section-title">
-                <h2>حوارات و لقاءات
-                </h2>
-                <h3>حوارات<span> و لقاءات
-                    </span></h3>
-                <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas
-                    atque vitae autem.</p>
+                <h2>حوارات و لقاءات</h2>
+                <h3>حوارات<span> و لقاءات</span></h3>
                 <div class="container">
                     <div class="row" id="news-list">
                         <!-- Les fiches d'actualités seront insérées dynamiquement ici -->
@@ -103,34 +99,48 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-    const news = [{
-            title: "Nouvelle Initiative",
-            date: "10 Janvier 2024",
-            image: "../assets/img/equipe/imagN1.jpg",
-            content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed...Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed...Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed...Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed... "
-        },
-        {
-            title: "Événement à Venir",
-            date: "15 Février 2024",
-            image: "../assets/img/equipe/imagN1.jpg",
-            content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed... "
-        },
-        {
-            title: "Réunion Importante",
-            date: "20 Mars 2024",
-            image: "../assets/img/equipe/imagN1.jpg",
-            content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed... "
-        }
-    ];
+        // Récupération dynamique des actualités depuis la base de données
+        <?php
+        // Connexion à la base de données
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $database = "association";
 
-    function renderNews() {
-        const newsList = document.getElementById('news-list');
-        newsList.innerHTML = '';
-        news.forEach((item, index) => {
-            const newsCard = `
+        $conn = new mysqli($servername, $username, $password, $database);
+
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        // Requête SQL pour sélectionner les actualités
+        $sql = "SELECT title, date, image, content FROM news";
+
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            // Convertir les résultats en JSON pour les utiliser en JavaScript
+            $news = array();
+            while ($row = $result->fetch_assoc()) {
+                $news[] = $row;
+            }
+            echo "const news = " . json_encode($news) . ";";
+        } else {
+            echo "const news = [];"; // Si aucune actualité n'est trouvée, initialiser un tableau vide
+        }
+
+        $conn->close();
+        ?>
+
+        // Fonction pour afficher les actualités dynamiquement
+        function renderNews() {
+            const newsList = document.getElementById('news-list');
+            newsList.innerHTML = '';
+            news.forEach((item, index) => {
+                const newsCard = `
                     <div class="col-md-4 card border-0  shadow" data-toggle="modal" data-target="#newsModal" data-index="${index}">
                         <div class="card">
-                            <img src="${item.image}" class="card-img-top" alt="${item.title}">
+                            <img src="../admin/uploads/image/${item.image}" class="card-img-top" alt="${item.title}">
                             <div class="card-body">
                                 <h5 class="card-title">${item.title}</h5>
                                 <p class="card-text">${item.date}</p>
@@ -138,43 +148,40 @@
                         </div>
                     </div>
                 `;
-            newsList.innerHTML += newsCard;
-        });
-    }
+                newsList.innerHTML += newsCard;
+            });
+        }
 
-    function showFullNews(index) {
-        const modalTitle = document.querySelector('#newsModal .modal-title');
-        const modalImage = document.querySelector('#newsModal .modal-body img');
-        const modalContent = document.querySelector('#newsModal .modal-body .news-content');
-        const socialIcons = document.querySelector('#newsModal .modal-body .social-icons');
+        // Fonction pour afficher une actualité complète dans le modal
+        function showFullNews(index) {
+            const modalTitle = document.querySelector('#newsModal .modal-title');
+            const modalImage = document.querySelector('#newsModal .modal-body img');
+            const modalContent = document.querySelector('#newsModal .modal-body .news-content');
+            const socialIcons = document.querySelector('#newsModal .modal-body .social-icons');
 
-        modalTitle.textContent = news[index].title;
-        modalImage.src = news[index].image;
-        modalContent.textContent = news[index].content;
+            modalTitle.textContent = news[index].title;
+            modalImage.src = news[index].image;
+            modalContent.textContent = news[index].content;
 
-        // Ajoutez des liens vers les réseaux sociaux ici
-        // Par exemple:
-        socialIcons.innerHTML = `
+            // Ajoutez des liens vers les réseaux sociaux ici
+            // Par exemple:
+            socialIcons.innerHTML = `
                 <a href="#" class="btn btn-primary"><i class="bi bi-twitter"></i></a>
                 <a href="#" class="btn btn-info"><i class="bi bi-facebook"></i></a>
                 <a href="#" class="btn btn-danger"><i class="bi bi-instagram"></i></a>
             `;
-    }
+        }
 
-    document.addEventListener('DOMContentLoaded', function() {
-        renderNews();
+        document.addEventListener('DOMContentLoaded', function() {
+            renderNews();
 
-        $('#newsModal').on('show.bs.modal', function(event) {
-            const button = event.relatedTarget;
-            const index = button.getAttribute('data-index');
-            showFullNews(index);
+            $('#newsModal').on('show.bs.modal', function(event) {
+                const button = event.relatedTarget;
+                const index = button.getAttribute('data-index');
+                showFullNews(index);
+            });
         });
-    });
     </script>
 </body>
 
 </html>
-
-<a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-<a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-<a href="#" class="instagram"><i class="bi bi-instagram"></i></a>

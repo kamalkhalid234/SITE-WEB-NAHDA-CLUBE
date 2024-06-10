@@ -100,73 +100,43 @@
                 <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas
                     atque vitae autem.</p>
                 <div class="pdf-grid">
-                    <div class="pdf-item shadow">
-                        <h2>لائحة المكتب المسير</h2>
-                        <iframe src="documents/bureau.pdf" width="100%" height="300px"></iframe>
-                        <div class="buttons">
-                            <a href="documents/bureau.pdf" target="_blank" class="view-btn">عرض</a>
-                            <a href="documents/bureau.pdf" download="bureau" class="download-btn">تحميل</a>
-                        </div>
-                    </div>
-                    <div class="pdf-item shadow">
-                        <h2>الوصل النهائي</h2>
-                        <iframe src="documents/certificat.pdf" width="100%" height="300px"></iframe>
-                        <div class="buttons">
-                            <a href="documents/certificat.pdf" target="_blank" class="view-btn">عرض</a>
-                            <a href="documents/certificat.pdf" download="certificat" class="download-btn">تحميل</a>
-                        </div>
-                    </div>
-                    <div class="pdf-item shadow">
-                        <h2>النظام الاساسي النموذجي للجمعية</h2>
-                        <iframe src="documents/droit-primaire.pdf" width="100%" height="300px"></iframe>
-                        <div class="buttons">
-                            <a href="documents/droit-primaire.pdf" target="_blank" class="view-btn">عرض</a>
-                            <a href="documents/droit-primaire.pdf" download="droit-primaire"
-                                class="download-btn">تحميل</a>
-                        </div>
-                    </div>
-                    <div class="pdf-item shadow">
-                        <h2>بيان التعريف البنكي</h2>
-                        <iframe src="documents/identité.pdf" width="100%" height="300px"></iframe>
-                        <div class="buttons">
-                            <a href="documents/identité.pdf" target="_blank" class="view-btn">عرض</a>
-                            <a href="documents/identité.pdf" download="identité" class="download-btn">تحميل</a>
-                        </div>
-                    </div>
-                    <div class="pdf-item shadow">
-                        <h2>القانون الداخلي للجمعية</h2>
-                        <iframe src="documents/lois-domestiques.pdf" width="100%" height="300px"></iframe>
-                        <div class="buttons">
-                            <a href="documents/lois-domestiques.pdf" target="_blank" class="view-btn">عرض</a>
-                            <a href="documents/lois-domestiques.pdf" download="lois-domestiques"
-                                class="download-btn">تحميل</a>
-                        </div>
-                    </div>
-                    <div class="pdf-item shadow">
-                        <h2>نموذج إشعار المعرف الضريبي</h2>
-                        <iframe src="documents/notification.pdf" width="100%" height="300px"></iframe>
-                        <div class="buttons">
-                            <a href="documents/notification.pdf" target="_blank" class="view-btn">عرض</a>
-                            <a href="documents/notification.pdf" download="notification" class="download-btn">تحميل</a>
-                        </div>
-                    </div>
-                    <div class="pdf-item shadow">
-                        <h2>محضر الجمع العام العادي</h2>
-                        <iframe src="documents/procès-verbal.pdf" width="100%" height="300px"></iframe>
-                        <div class="buttons">
-                            <a href="documents/procès-verbal.pdf" target="_blank" class="view-btn">عرض</a>
-                            <a href="documents/procès-verbal.pdf" download="procès-verbal"
-                                class="download-btn">تحميل</a>
-                        </div>
-                    </div>
-                    <div class="pdf-item shadow">
-                        <h2>اشهاد</h2>
-                        <iframe src="documents/témoignages.pdf" width="100%" height="300px"></iframe>
-                        <div class="buttons">
-                            <a href="documents/témoignages.pdf" target="_blank" class="view-btn">عرض</a>
-                            <a href="documents/témoignages.pdf" download="Droit_Club4" class="download-btn">تحميل</a>
-                        </div>
-                    </div>
+                    <?php
+                    // Connexion à la base de données
+                    $servername = "localhost";
+                    $username = "root";
+                    $password = "";
+                    $database = "association";
+
+                    $conn = new mysqli($servername, $username, $password, $database);
+
+                    if ($conn->connect_error) {
+                        die("Connection failed: " . $conn->connect_error);
+                    }
+                    error_reporting(E_ALL);
+                    ini_set('display_errors', 1);
+
+                    // Requête SQL pour sélectionner les documents du type " الجموع الاستثنائية "
+                    $type_id = 3; // ID du type " الجموع الاستثنائية "
+                    $sql = "SELECT title, pdf FROM documents WHERE type_id = $type_id";
+                    $result = $conn->query($sql);
+
+                    if ($result->num_rows > 0) {
+                        // Affichage des documents
+                        while ($row = $result->fetch_assoc()) {
+                            echo '<div class="pdf-item shadow">';
+                            echo '<h2>' . $row["title"] . '</h2>';
+                            echo '<iframe src="../admin/uploads/documents/' . $row["pdf"] . '" width="100%" height="300px"></iframe>';
+                            echo '<div class="buttons">';
+                            echo '<a href="../admin/uploads/documents/' . $row["pdf"] . '" target="_blank" class="view-btn">عرض</a>';
+                            echo '<a href="../admin/uploads/documents/' . $row["pdf"] . '" download="' . pathinfo($row["pdf"], PATHINFO_FILENAME) . '" class="download-btn">تحميل</a>';
+                            echo '</div>';
+                            echo '</div>';
+                        }
+                    } else {
+                        echo '<p>No documents found.</p>';
+                    }
+                    $conn->close();
+                    ?>
                 </div>
             </div>
 
