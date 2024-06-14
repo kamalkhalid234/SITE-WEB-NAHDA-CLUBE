@@ -1,40 +1,73 @@
+<?php
+// Connexion à la base de données
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "association";
+
+
+$conne = new mysqli($servername, $username, $password, $database);
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- lies css bootrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-
-    <!-- hhhh -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-
-
-    <!-- lien texte -->
-    <!-- linkfonte -->
-
-
-    <!-- IMAGE Use Swiper from CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-    <!-- lien css -->
-    <link rel="stylesheet" href="css/common.css">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>NAHAD</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+    <?php
+    include "inc/link.php";
+    ?>
     <style>
-    :root {
-        --teal: #2ec1ac;
-        --teal_hover: #279e8c;
+    .tajarib {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
-
-    * {
-        font-family: 'Poppins', sans-serif;
+    .tajarib thead {
+        background-color: #007bff;
+        color: #fff;
     }
 
+    .tajarib th,
+    .tajarib td {
+        vertical-align: middle;
+    }
+
+    .tajarib img {
+        width: 100%;
+        height: 50px;
+        border-radius: 50%;
+    }
+
+    .table-bordered {
+        border: 1px solid #dee2e6;
+    }
+
+    .swiper-container {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .swiper-slide {
+        width: auto;
+        margin-right: 5;
+    }
+
+    .swiper-slide img {
+        width: 100%;
+        height: 50vh;
+    }
 
     .h-font {
         font-family: 'Meriend', cursive;
@@ -52,10 +85,10 @@
         border: 1px solid --teal
     }
 
-    .custom-bg:hover {
+    /* .custom-bg:hover {
         background-color: var(--teal_hover);
         border-color: var(--teal_hover);
-    }
+    } */
 
 
     .h-line {
@@ -66,133 +99,136 @@
 
 
     .pop:hover {
-        border-top-color: #2ec1ac !important;
-        transform: scale(1.03);
+        border-top-color: #007bff !important;
+        transform: scale(1.06);
         transition: all 0.3s;
+    }
+
+    .text-yellow {
+        color: yellow !important;
+        /* Appliquer la couleur jaune */
     }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <!-- cards -->
-            <dic class="col-lg-4 col-md-6 my-3">
-                <div class="card border-0 shadow" style="max-width: 350px; margin:auto;">
-                    <img src="images/rooms/1.jpg" class="card-img-top">
-                    <div class="card-body">
-                        <h5>Simple Room Name</h5>
-                        <h6 class="mb-4">DH 200 per night</h6>
-                        <div class="features mb-4">
-                            <h6 class="mb-1">Features</h6>
 
-                        </div>
-                        <div class="d-flex justify-content-evenly mb-2 ">
-                            <a href="#" class="btn btn-sm text-white custom-bg shadow-non ">Book Now</a>
-                            <a href="#" class="btn btn-sm btn-outline-dark shadow-non ">More
-                                details</a>
-                        </div>
-                    </div>
+    <!-- ======= Hero Section ======= -->
+
+    <main id="main">
+
+        <!-- ======= Team Section ======= -->
+        <section id="team" class="team section-bg">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>Team</h2>
+                    <h3> <span>لاعبو </span>الفريق</h3>
+                    <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas
+                        atque vitae autem.</p>
                 </div>
-            </dic>
-            <!-- cards -->
-            <dic class="col-lg-4 col-md-6 my-3">
-                <div class="card border-0 shadow" style="max-width: 350px; margin:auto;">
-                    <img src="images/rooms/1.jpg" class="card-img-top">
-                    <div class="card-body">
-                        <h5>Simple Room Name</h5>
-                        <h6 class="mb-4">DH 200 per night</h6>
-                        <div class="features mb-4">
-                            <h6 class="mb-1">Features</h6>
 
-                        </div>
-                        <div class="d-flex justify-content-evenly mb-2 ">
-                            <a href="#" class="btn btn-sm text-white custom-bg shadow-non ">Book Now</a>
-                            <a href="#" class="btn btn-sm btn-outline-dark shadow-non ">More
-                                details</a>
+                <div class="container swiper">
+                    <div class="slide-container">
+                        <div class="card-wrapper swiper-wrapper">
+                            <?php
+                            // Enable error reporting for debugging
+                            // error_reporting(E_ALL);
+                            // ini_set('display_errors', 1);
+                            
+                            // Assume $conne is a valid MySQLi connection instance
+                            if ($conne) {
+                                // SQL query to select players from the specified category and sport
+                                $sql_joueur = "SELECT nom, prenom, numero_maillot, image, role FROM joueurs WHERE categorie_id = 1 AND type_sport_id = 1";
+                                $result_joueur = $conne->query($sql_joueur);
+
+                                // Check if there are results
+                                if ($result_joueur && $result_joueur->num_rows > 0) {
+                                    // Use an array to keep track of displayed players
+                                    $displayed_players = [];
+
+                                    // Fetch and display each player's data
+                                    while ($row = $result_joueur->fetch_assoc()) {
+                                        // Combine name and jersey number to create a unique key
+                                        $player_key = $row['numero_maillot'] . '_' . $row['nom'] . '_' . $row['prenom'];
+
+                                        // Check if this player has already been displayed
+                                        if (!in_array($player_key, $displayed_players)) {
+                                            // Add player key to the array
+                                            $displayed_players[] = $player_key;
+                                            ?>
+                            <div class="card swiper-slide shadow">
+                                <div class="image-box">
+                                    <!-- Ensure the image path is correct -->
+                                    <img src="admin/image/<?= htmlspecialchars($row['image']) ?>" alt="Player Image" />
+                                </div>
+                                <div
+                                    class="profile-details bg-primary d-flex justify-content-center align-items-center">
+                                    <div class="text-center">
+                                        <!-- Display jersey number, name, and role with correct styling -->
+                                        <h4 class="job text-yellow mb-0"><?= htmlspecialchars($row['numero_maillot']) ?>
+                                        </h4>
+                                        <h3 class="name text-white"><?= htmlspecialchars($row['prenom']) ?>
+                                            <?= htmlspecialchars($row['nom']) ?>
+                                        </h3>
+                                        <h4 class="role text-yellow mb-0"><?= htmlspecialchars($row['role']) ?></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                                        }
+                                    }
+                                } else {
+                                    // Message if no players are found
+                                    echo "Aucun joueur trouvé.";
+                                }
+                            } else {
+                                // Error message if the database connection fails
+                                echo "Erreur de connexion à la base de données.";
+                            }
+                            ?>
                         </div>
                     </div>
-                </div>
-            </dic>
-            <!-- cards -->
-            <dic class="col-lg-4 col-md-6 my-3">
-                <div class="card border-0 shadow" style="max-width: 350px; margin:auto;">
-                    <img src="images/rooms/1.jpg" class="card-img-top">
-                    <div class="card-body">
-                        <h5>Simple Room Name</h5>
-                        <h6 class="mb-4">DH 200 per night</h6>
-                        <div class="features mb-4">
-                            <h6 class="mb-1">Features</h6>
-
-                        </div>
-                        <div class="d-flex justify-content-evenly mb-2 ">
-                            <a href="#" class="btn btn-sm text-white custom-bg shadow-non ">Book Now</a>
-                            <a href="#" class="btn btn-sm btn-outline-dark shadow-non ">More
-                                details</a>
-                        </div>
-                    </div>
-                </div>
-            </dic>
-            <div class="col-lg-12 text-center mt-5">
-                <a href="#" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">More Rooms > > > </a>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="container">
-        <div class="row">
-
-            <!-- scale 2 -->
-            <div class="col-lg-4 col-md-6 mb-5 px-4 ">
-                <div class="bg-white rounded  shadow p-4 border-top border-3 border-dark pop">
-                    <div class="d-flex align-items-center mb-2">
-                        <img src="$path/$row[icon]" width="40px" alt="">
-                        <h5 class="m-0 ms-3">
-                            كرة اليد</h5>
-                    </div>
-                    <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
-                </div>
-            </div>
-            <!-- scale 2 -->
-            <div class="col-lg-4 col-md-6 mb-5 px-4 ">
-                <div class="bg-white rounded  shadow p-4 border-top border-3 border-dark pop">
-                    <div class="d-flex align-items-center mb-2">
-                        <img src="$path/$row[icon]" width="40px" alt="">
-                        <h5 class="m-0 ms-3">
-                            كرة السلة</h5>
-                    </div>
-                    <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi
-                    </p>
+                    <!-- Swiper navigation buttons -->
+                    <div class="swiper-button-next swiper-navBtn"></div>
+                    <div class="swiper-button-prev swiper-navBtn"></div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
-            <!-- scale 2 -->
-            <div class="col-lg-4 col-md-6 mb-5 px-4 ">
-                <div class="bg-white rounded  shadow p-4 border-top border-3 border-dark pop">
-                    <div class="d-flex align-items-center mb-2">
-                        <img src="$path/$row[icon]" width="40px" alt="">
-                        <h5 class="m-0 ms-3">
-                            كرة القدم</h5>
-                    </div>
-                    <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi
-
-                    </p>
-                </div>
-            </div>
-
-        </div>
-    </div>
+        </section><!-- End Team Section -->
 
 
 
 
+    </main><!-- End #main -->
 
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
 
-    <!-- lien Bundle nav-bar -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    <!-- Template Main JS File -->
+    <script src="../assets/js/main.js"></script>
+    <!-- Swiper JS CDN -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 'auto',
+        spaceBetween: 2,
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
     </script>
-
 </body>
 
 </html>

@@ -105,7 +105,7 @@ $conn->close();
                 </div>
 
                 <div class="row" data-aos="fade-up" data-aos-delay="100">
-                <?php
+                    <?php
                     if ($contact_result->num_rows > 0) {
                         while ($row = $contact_result->fetch_assoc()) {
                             echo '<div class="col-lg-6 ">
@@ -125,7 +125,7 @@ $conn->close();
 
                 <div class="row" data-aos="fade-up" data-aos-delay="100">
 
-<?php if ($map_result->num_rows > 0) {
+                    <?php if ($map_result->num_rows > 0) {
     // Affichage de la carte Google Maps
     $row = $map_result->fetch_assoc();
     echo '<div class="col-lg-6">';
@@ -140,21 +140,26 @@ $conn->close();
                         <form action="" method="post" class="shadow p-4">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Your Name</label>
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                                    required>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Your Email</label>
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                                <input type="email" class="form-control" name="email" id="email"
+                                    placeholder="Your Email" required>
                             </div>
                             <div class="mb-3">
                                 <label for="subject" class="form-label">Subject</label>
-                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                                <input type="text" class="form-control" name="subject" id="subject"
+                                    placeholder="Subject" required>
                             </div>
                             <div class="mb-3">
                                 <label for="message" class="form-label">Message</label>
-                                <textarea class="form-control" name="message" id="message" rows="5" placeholder="Message" required></textarea>
+                                <textarea class="form-control" name="message" id="message" rows="5"
+                                    placeholder="Message" required></textarea>
                             </div>
-                            <div class="text-center"><button type="submit" class="btn btn-primary">Send Message</button></div>
+                            <div class="text-center"><button type="submit" class="btn btn-primary">Send Message</button>
+                            </div>
                         </form>
                     </div>
 
@@ -181,7 +186,8 @@ $conn->close();
     <script src="../assets/vendor/php-email-form/validate.js"></script>
 
     <!-- TemplateMain JS File -->
-<script src="../assets/js/main.js"></script>
+    <script src="../assets/js/main.js"></script>
 
 </body>
+
 </html>

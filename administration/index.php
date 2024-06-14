@@ -109,8 +109,9 @@ if ($conne->connect_error) {
     }
 
     .text-yellow {
-    color: yellow !important; /* Appliquer la couleur jaune */
-}
+        color: yellow !important;
+        /* Appliquer la couleur jaune */
+    }
     </style>
 </head>
 
@@ -150,24 +151,24 @@ if ($conne->connect_error) {
                 </div>
 
                 <div class="row justify-content-center">
-                    <?php 
+                    <?php
                     // Récupérer les types et descriptions existants
                     $sql = "SELECT * FROM types_photos";
                     $result = $conne->query($sql);
                     while ($row = $result->fetch_assoc()): ?>
-                        <div class="col-lg-4 col-md-6 mb-5 px-4">
-                            <div class="bg-white rounded shadow p-4 border-top border-3 border-dark pop">
-                                <div class="d-flex align-items-center mb-2">
-                                    <?php if (!empty($row['image'])): ?>
-                                        <img src="../admin/<?= $row['image'] ?>" width="70px" alt="">
-                                    <?php else: ?>
-                                        <img src="../assets/img/default-icon.png" width="70px" alt="">
-                                    <?php endif; ?>
-                                    <h5 class="m-0 ms-3"><?= $row['type'] ?></h5>
-                                </div>
-                                <p><?= $row['description'] ?: 'Pas de description disponible.' ?></p>
+                    <div class="col-lg-4 col-md-6 mb-5 px-4">
+                        <div class="bg-white rounded shadow p-4 border-top border-3 border-dark pop">
+                            <div class="d-flex align-items-center mb-2">
+                                <?php if (!empty($row['image'])): ?>
+                                <img src="../admin/<?= $row['image'] ?>" width="70px" alt="">
+                                <?php else: ?>
+                                <img src="../assets/img/default-icon.png" width="70px" alt="">
+                                <?php endif; ?>
+                                <h5 class="m-0 ms-3"><?= $row['type'] ?></h5>
                             </div>
+                            <p><?= $row['description'] ?: 'Pas de description disponible.' ?></p>
                         </div>
+                    </div>
                     <?php endwhile; ?>
                 </div>
 
@@ -194,20 +195,22 @@ if ($conne->connect_error) {
                         $result_classement = $conne->query($sql_classment);
                         $row = $result_classement->fetch_assoc();
                         if (isset($row['equipe_image']) && !empty($row['equipe_image'])): ?>
-                            <img src="../admin/<?= $row['equipe_image'] ?>" class="img-fluid shadow" alt="Image Équipe" style="width: 100%; height: 60vh;">
+                        <img src="../admin/<?= $row['equipe_image'] ?>" class="img-fluid shadow" alt="Image Équipe"
+                            style="width: 100%; height: 60vh;">
                         <?php else: ?>
-                            <p>Aucune image d'équipe trouvée.</p>
+                        <p>Aucune image d'équipe trouvée.</p>
                         <?php endif; ?>
                     </div>
                     <div class="col-lg-6">
                         <div class="card shadow">
                             <?php if (isset($row['classement_image']) && !empty($row['classement_image'])): ?>
-                                <img src="../admin/<?= $row['classement_image'] ?>" class="img-fluid shadow" alt="Image Classement" style="width: 100%; height: 60vh;">
-                                <div class="card-body">
-                                    <p class="card-text"><?= $row['description'] ?></p>
-                                </div>
+                            <img src="../admin/<?= $row['classement_image'] ?>" class="img-fluid shadow"
+                                alt="Image Classement" style="width: 100%; height: 60vh;">
+                            <div class="card-body">
+                                <p class="card-text"><?= $row['description'] ?></p>
+                            </div>
                             <?php else: ?>
-                                <p>Aucune image de classement trouvée.</p>
+                            <p>Aucune image de classement trouvée.</p>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -231,136 +234,80 @@ if ($conne->connect_error) {
                 </div>
 
                 <div class="row">
-                <?php
+                    <?php
 
 
-// Requête SQL pour sélectionner les trois actualités les plus récentes
-$sql = "SELECT * FROM news ORDER BY date DESC LIMIT 3";
-$result = $conne->query($sql);
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-if ($result->num_rows > 0) {
-    // Affichage des actualités
-    while ($row = $result->fetch_assoc()) {
-        echo '<div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="100">';
-        echo '<div class="card border-0 shadow">';
-        echo '<img src="../admin/uploads/image/' . $row["image"] . '" class="card-img-top" alt="' . $row["title"] . '">';
-        echo '<div class="card-body text-center">';
-        echo '<h5 class="card-title">' . $row["title"] . '</h5>';
-        echo '<p class="card-text">' . $row["content"] . '</p>';
-        echo '<p class="card-text">' . $row["date"] . '</p>'; // Afficher la date
-        echo '<a href="actualete.php?id=' . $row["id"] . '" class="btn btn-primary">Voir plus</a>';
-        echo '</div>';
-        echo '</div>';
-        echo '</div>';
-    }
-} else {
-    echo '<p>Aucune actualité trouvée.</p>';
-}
+                    // Requête SQL pour sélectionner les trois actualités les plus récentes
+                    $sql = "SELECT * FROM news ORDER BY date DESC LIMIT 3";
+                    $result = $conne->query($sql);
+                    error_reporting(E_ALL);
+                    ini_set('display_errors', 1);
+                    if ($result->num_rows > 0) {
+                        // Affichage des actualités
+                        while ($row = $result->fetch_assoc()) {
+                            echo '<div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="100">';
+                            echo '<div class="card border-0 shadow">';
+                            echo '<img src="../admin/uploads/image/' . $row["image"] . '" class="card-img-top" alt="' . $row["title"] . '">';
+                            echo '<div class="card-body text-center">';
+                            echo '<h5 class="card-title">' . $row["title"] . '</h5>';
+                            echo '<p class="card-text">' . $row["content"] . '</p>';
+                            echo '<p class="card-text">' . $row["date"] . '</p>'; // Afficher la date
+                            echo '<a href="actualete.php?id=' . $row["id"] . '" class="btn btn-primary">Voir plus</a>';
+                            echo '</div>';
+                            echo '</div>';
+                            echo '</div>';
+                        }
+                    } else {
+                        echo '<p>Aucune actualité trouvée.</p>';
+                    }
 
 
-?>
+                    ?>
 
                 </div>
             </div>
         </section>
 
-        <!-- End Services Section -->
-        <!-- ======= Team Section ======= -->
-        <section id="team" class="team section-bg">
-            <div class="container" data-aos="fade-up">
-                <div class="section-title">
-                    <h2>Team</h2>
-                    <h3> <span>لاعبو </span>الفريق</h3>
-                    <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas
-                        atque
-                        vitae autem.</p>
-                </div>
 
-                <div class="container swiper">
-                    <div class="slide-container">
-                        <div class="card-wrapper swiper-wrapper">
-                            <?php
-
-                        // Requête SQL pour sélectionner les joueurs de la catégorie "الكبار" dans le sport "كرة القدم"
-$sql_joueur = "SELECT nom, prenom, numero_maillot, image, role FROM joueurs WHERE categorie_id = 1 AND type_sport_id = 1";
-$result_joueur = $conne->query($sql_joueur);
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-// Vérification s'il y a des résultats
-if ($result_joueur->num_rows > 0) {
-    // Affichage des données
-    while ($row = $result_joueur->fetch_assoc()) { ?>
-<div class="card swiper-slide shadow">
-    <div class="image-box">
-        <!-- Assurez-vous que le chemin de l'image est correct -->
-        <img src="../admin/<?= $row['image'] ?>" alt="" />
-    </div>
-    <div class="profile-details bg-primary d-flex justify-content-center align-items-center">
-        <div class="text-center">
-            <!-- Affichage du numéro de maillot en blanc -->
-            <h4 class="job text-yellow mb-0"><?= $row['numero_maillot'] ?></h4>
-            <!-- Affichage du nom et du prénom -->
-            <h3 class="name text-white"><?= $row['prenom'] ?> <?= $row['nom'] ?></h3>
-            <!-- Ajout du rôle du joueur en jaune -->
-            <h4 class="role text-yellow mb-0"><?= $row['role'] ?></h4>
-        </div>
-    </div>
-</div>
-<?php }
-} else {
-    echo "Aucun joueur trouvé.";
-}
-?>
-                        </div>
-                    </div>
-                    <div class="swiper-button-next swiper-navBtn"></div>
-                    <div class="swiper-button-prev swiper-navBtn"></div>
-                    <div class="swiper-pagination"></div>
-                </div>
-
-
-            </div>
-        </section><!-- End Team Section -->
 
 
         <!-- ======= Portfolio Section ======= -->
         <section id="portfolio" class="portfolio">
-    <div class="container albume" data-aos="fade-up">
-        <div class="section-title">
-            <h2>مكتبة الصور</h2>
-            <h3>مكتبة <span> الصور</span></h3>
-            <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas
-                atque vitae autem.</p>
-        </div>
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <?php
-                // Requête SQL pour sélectionner les images de la galerie
-                $sql_images = "SELECT * FROM gallery";
-                $result_images = $conne->query($sql_images);
-
-                // Vérification s'il y a des résultats
-                if ($result_images->num_rows > 0) {
-                    // Affichage des images dans les diapositives de Swiper
-                    while ($row = $result_images->fetch_assoc()) {
-                ?>
-                        <div class="swiper-slide shadow">
-                            <img src="../admin/uploads/image/<?= $row['image'] ?>" alt="gallery">
+            <div class="container albume" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>مكتبة الصور</h2>
+                    <h3>مكتبة <span> الصور</span></h3>
+                    <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas
+                        atque vitae autem.</p>
+                </div>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="../admin/image/customer-support.jpg" alt="Player Image" />
                         </div>
-                <?php
-                    }
-                } else {
-                    echo "Aucune image trouvée.";
-                }
-                ?>
+                        <div class="swiper-slide">
+                            <img src="../admin/image/profile.jpg" alt="Player Image" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../admin/image/customer-support.jpg" alt="Player Image" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../admin/image/profile.jpg" alt="Player Image" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../admin/image/customer-support.jpg" alt="Player Image" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../admin/image/profile.jpg" alt="Player Image" />
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
-            <div class="swiper-pagination"></div>
-        </div>
-    </div>
-</section>
-<!-- End Portfolio Section -->
+        </section>
+        <!-- End Portfolio Section -->
+
 
 
 
@@ -371,14 +318,14 @@ if ($result_joueur->num_rows > 0) {
             <div class="container">
                 <div class="row">
                     <?php
-// Requête SQL pour récupérer les images des sponsors
-$sql = "SELECT image FROM sponsors";
-$result = $conne->query($sql);
+                    // Requête SQL pour récupérer les images des sponsors
+                    $sql = "SELECT image FROM sponsors";
+                    $result = $conne->query($sql);
 
-// Afficher les images des sponsors
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-                    ?>
+                    // Afficher les images des sponsors
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            ?>
                     <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
                         <img src="../admin/uploads/image/<?= $row['image'] ?>" class="img-fluid" alt="">
                     </div>
@@ -420,23 +367,27 @@ if ($result->num_rows > 0) {
 
     <!-- Template Main JS File -->
     <script src="../assets/js/main.js"></script>
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Swiper JS CDN -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="../assets/js/swiper-bundle.min.js"></script>
     <script src="../assets/js/script.js"></script>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
     var swiper = new Swiper('.swiper-container', {
         slidesPerView: 'auto',
-        spaceBetween: 5,
+        spaceBetween: 1,
         loop: true,
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
         },
+    });
+    </script>
+
+    <script>
+    var swiper = new Swiper(".mySwiper", {
+        watchSlidesProgress: true,
+        slidesPerView: 2,
     });
     </script>
 </body>
