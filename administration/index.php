@@ -282,24 +282,19 @@ if ($conne->connect_error) {
                 </div>
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="../admin/image/customer-support.jpg" alt="Player Image" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="../admin/image/profile.jpg" alt="Player Image" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="../admin/image/customer-support.jpg" alt="Player Image" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="../admin/image/profile.jpg" alt="Player Image" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="../admin/image/customer-support.jpg" alt="Player Image" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="../admin/image/profile.jpg" alt="Player Image" />
-                        </div>
+                        <?php // Requête SQL pour sélectionner les images où type_id = 1
+                        $sql = "SELECT * FROM gallery WHERE type_id = 1";
+                        $result = $conne->query($sql);
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<div class='swiper-slide'>
+                                        <img src='../admin/uploads/image/" . htmlspecialchars($row['image']) . "' alt='Player Image' />
+                                      </div>";
+                            }
+                        } else {
+                            echo "<p>Aucune image trouvée.</p>";
+                        }
+                        ?>
 
                     </div>
                 </div>
