@@ -1,3 +1,21 @@
+<?php
+// Connexion à la base de données
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "association";
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+
+$conne = new mysqli($servername, $username, $password, $database);
+
+if ($conne->connect_error) {
+    die("Connection failed: " . $conne->connect_error);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -98,72 +116,40 @@
                 <div class="section-title">
                     <h2> كرة القدم الكبار </h2>
                     <h3> <span> المقابلات</span></h3>
-                    <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas
+                    <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at
+                        voluptas
                         atque vitae autem.</p>
                 </div>
                 <div class="container swiper match shadow">
                     <div class="slide-container ">
                         <div class="card-wrapper swiper-wrapper   ">
 
-                            <div class="swiper-slide match-card shadow  ">
-                                <div class="team-logos">
-                                    <img src="../assets/img/logo.png" alt="Team 1 Logo">
-                                    <img src="../assets/img/logo.png" alt="Team 2 Logo">
-                                </div>
-                                <h2>3:0</h2>
-                                <div class="details">
-                                    <p><i class="fas fa-calendar-alt"></i> February 12, 2022 - 06:00 PM</p>
-                                    <p><i class="fas fa-map-marker-alt"></i> ملعب البشير</p>
-                                </div>
-                            </div>
+                        <?php
+                            $categorie_id = 1; // Set category ID
+                            $type_sport_id = 1; // Set type sport ID
 
-                            <div class="swiper-slide match-card shadow">
-                                <div class="team-logos">
-                                    <img src="../assets/img/logo.png" alt="Team 1 Logo">
-                                    <img src="../assets/img/logo.png" alt="Team 2 Logo">
-                                </div>
-                                <h2>0:1</h2>
-                                <div class="details">
-                                    <p><i class="fas fa-calendar-alt"></i> February 03, 2022 - 12:00 AM</p>
-                                    <p><i class="fas fa-map-marker-alt"></i> ملعب ابن بطوطة</p>
-                                </div>
-                            </div>
+                            $sql = "SELECT * FROM matches WHERE categorie_id = $categorie_id AND type_sport_id = $type_sport_id";
+                            $result = $conne->query($sql);
 
-                            <div class="swiper-slide match-card shadow">
-                                <div class="team-logos">
-                                    <img src="../assets/img/logo.png" alt="Team 1 Logo">
-                                    <img src="../assets/img/logo.png" alt="Team 2 Logo">
-                                </div>
-                                <h2>1:0</h2>
-                                <div class="details">
-                                    <p><i class="fas fa-calendar-alt"></i> March 01, 2022 - 08:00 PM</p>
-                                    <p><i class="fas fa-map-marker-alt"></i> ملعب ابن بطوطة</p>
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide match-card shadow">
-                                <div class="team-logos">
-                                    <img src="../assets/img/logo.png" alt="Team 1 Logo">
-                                    <img src="../assets/img/logo.png" alt="Team 2 Logo">
-                                </div>
-                                <h2>1:0</h2>
-                                <div class="details">
-                                    <p><i class="fas fa-calendar-alt"></i> March 01, 2022 - 08:00 PM</p>
-                                    <p><i class="fas fa-map-marker-alt"></i> ملعب ابن بطوطة</p>
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide match-card shadow">
-                                <div class="team-logos">
-                                    <img src="../assets/img/logo.png" alt="Team 1 Logo">
-                                    <img src="../assets/img/logo.png" alt="Team 2 Logo">
-                                </div>
-                                <h2>1:0</h2>
-                                <div class="details">
-                                    <p><i class="fas fa-calendar-alt"></i> March 01, 2022 - 08:00 PM</p>
-                                    <p><i class="fas fa-map-marker-alt"></i> ملعب ابن بطوطة</p>
-                                </div>
-                            </div>
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    echo '
+                                    <div class="swiper-slide match-card shadow">
+                                        <div class="team-logos">
+                                            <img src="../assets/img/' . $row["team1_logo"] . '" alt="Team 1 Logo">
+                                            <img src="../assets/img/' . $row["team2_logo"] . '" alt="Team 2 Logo">
+                                        </div>
+                                        <h2>' . $row["score"] . '</h2>
+                                        <div class="details">
+                                            <p><i class="fas fa-calendar-alt"></i> ' . $row["date"] . ' - ' . $row["time"] . '</p>
+                                            <p><i class="fas fa-map-marker-alt"></i> ' . $row["location"] . '</p>
+                                        </div>
+                                    </div>';
+                                }
+                            } else {
+                                echo "0 results";
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -177,7 +163,7 @@
         <section id="team" class="team section-bg">
             <div class="container" data-aos="fade-up">
                 <div class="section-title">
-                    <h2>كرة القدم الكبار</h2>
+                    <h2> كرة القدم الكبار </h2>
                     <h3> <span>لاعبو </span>الفريق</h3>
                     <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at
                         voluptas
@@ -185,132 +171,30 @@
                     <div class="container swiper">
                         <div class="slide-container">
                             <div class="card-wrapper swiper-wrapper">
-                                <div class="card swiper-slide shadow">
-                                    <div class="image-box">
-                                        <!-- Ensure the image path is correct -->
-                                        <img src="../admin/image/profile.jpg" alt="Player Image" />
-                                    </div>
-                                    <div
-                                        class="profile-details bg-primary d-flex justify-content-center align-items-center">
-                                        <div class="text-center">
-                                            <!-- Display jersey number, name, and role with correct styling -->
-                                            <h4 class="job text-yellow mb-0">1
-                                            </h4>
-                                            <h3 class="name text-white">1
+                            <?php
+                                $sql = "SELECT * FROM joueurs WHERE categorie_id = $categorie_id";
+                                $result = $conne->query($sql);
 
-                                            </h3>
-                                            <h4 class="role text-yellow mb-0">1</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card swiper-slide shadow">
-                                    <div class="image-box">
-                                        <!-- Ensure the image path is correct -->
-                                        <img src="../admin/image/profile.jpg" alt="Player Image" />
-                                    </div>
-                                    <div
-                                        class="profile-details bg-primary d-flex justify-content-center align-items-center">
-                                        <div class="text-center">
-                                            <!-- Display jersey number, name, and role with correct styling -->
-                                            <h4 class="job text-yellow mb-0">2
-                                            </h4>
-                                            <h3 class="name text-white">2
-
-                                            </h3>
-                                            <h4 class="role text-yellow mb-0">2</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card swiper-slide shadow">
-                                    <div class="image-box">
-                                        <!-- Ensure the image path is correct -->
-                                        <img src="../admin/image/profile.jpg" alt="Player Image" />
-                                    </div>
-                                    <div
-                                        class="profile-details bg-primary d-flex justify-content-center align-items-center">
-                                        <div class="text-center">
-                                            <!-- Display jersey number, name, and role with correct styling -->
-                                            <h4 class="job text-yellow mb-0">3
-                                            </h4>
-                                            <h3 class="name text-white">3
-
-                                            </h3>
-                                            <h4 class="role text-yellow mb-0">3</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card swiper-slide shadow">
-                                    <div class="image-box">
-                                        <!-- Ensure the image path is correct -->
-                                        <img src="../admin/image/profile.jpg" alt="Player Image" />
-                                    </div>
-                                    <div
-                                        class="profile-details bg-primary d-flex justify-content-center align-items-center">
-                                        <div class="text-center">
-                                            <!-- Display jersey number, name, and role with correct styling -->
-                                            <h4 class="job text-yellow mb-0">4
-                                            </h4>
-                                            <h3 class="name text-white">4
-
-                                            </h3>
-                                            <h4 class="role text-yellow mb-0">4</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card swiper-slide shadow">
-                                    <div class="image-box">
-                                        <!-- Ensure the image path is correct -->
-                                        <img src="../admin/image/profile.jpg" alt="Player Image" />
-                                    </div>
-                                    <div
-                                        class="profile-details bg-primary d-flex justify-content-center align-items-center">
-                                        <div class="text-center">
-                                            <!-- Display jersey number, name, and role with correct styling -->
-                                            <h4 class="job text-yellow mb-0">5
-                                            </h4>
-                                            <h3 class="name text-white">5
-
-                                            </h3>
-                                            <h4 class="role text-yellow mb-0">5</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card swiper-slide shadow">
-                                    <div class="image-box">
-                                        <!-- Ensure the image path is correct -->
-                                        <img src="../admin/image/profile.jpg" alt="Player Image" />
-                                    </div>
-                                    <div
-                                        class="profile-details bg-primary d-flex justify-content-center align-items-center">
-                                        <div class="text-center">
-                                            <!-- Display jersey number, name, and role with correct styling -->
-                                            <h4 class="job text-yellow mb-0">6
-                                            </h4>
-                                            <h3 class="name text-white">6
-
-                                            </h3>
-                                            <h4 class="role text-yellow mb-0">6</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card swiper-slide shadow">
-                                    <div class="image-box">
-                                        <!-- Ensure the image path is correct -->
-                                        <img src="../admin/image/profile.jpg" alt="Player Image" />
-                                    </div>
-                                    <div
-                                        class="profile-details bg-primary d-flex justify-content-center align-items-center">
-                                        <div class="text-center">
-                                            <!-- Display jersey number, name, and role with correct styling -->
-                                            <h4 class="job text-yellow mb-0">7
-                                            </h4>
-                                            <h3 class="name text-white">7
-
-                                            </h3>
-                                            <h4 class="role text-yellow mb-0">7</h4>
-                                        </div>
-                                    </div>
-                                </div>
+                                if ($result->num_rows > 0) {
+                                    while ($row = $result->fetch_assoc()) {
+                                        echo '
+                                        <div class="card swiper-slide shadow">
+                                            <div class="image-box">
+                                                <img src="../admin/' . $row["image"] . '" alt="Player Image" />
+                                            </div>
+                                            <div class="profile-details bg-primary d-flex justify-content-center align-items-center">
+                                                <div class="text-center">
+                                                    <h4 class="job text-yellow mb-0">' . $row["numero_maillot"] . '</h4>
+                                                    <h3 class="name text-white">' . $row["prenom"] . ' ' . $row["nom"] . '</h3>
+                                                    <h4 class="role text-yellow mb-0">' . $row["role"] . '</h4>
+                                                </div>
+                                            </div>
+                                        </div>';
+                                    }
+                                } else {
+                                    echo "0 results";
+                                }
+                                ?>
 
                             </div>
                         </div>
@@ -327,7 +211,7 @@
         <section id="portfolio" class="portfolio">
             <div class="container albume" data-aos="fade-up">
                 <div class="section-title">
-                    <h2>كرة القدم الكبار</h2>
+                    <h2> كرة القدم الكبار </h2>
                     <h3>مكتبة <span> الصور</span></h3>
                     <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at
                         voluptas
@@ -335,28 +219,24 @@
                 </div>
                 <div class="swiper mySwiper shadow">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="../admin/image/customer-support.jpg" alt="Player Image" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="../admin/image/profile.jpg" alt="Player Image" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="../admin/image/customer-support.jpg" alt="Player Image" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="../admin/image/profile.jpg" alt="Player Image" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="../admin/image/customer-support.jpg" alt="Player Image" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="../admin/image/profile.jpg" alt="Player Image" />
-                        </div>
+                    <?php
+                        $sql = "SELECT * FROM gallery WHERE categorie_id = $categorie_id AND type_id = $type_sport_id";
+                        $result = $conne->query($sql);
+
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                echo '
+                                <div class="swiper-slide"> 
+                                    <img src="../admin/uploads/image/' . $row["image"] . '" alt="Photo Image" />
+                                </div>';
+                            }
+                        } else {
+                            echo "0 results";
+                        }
+                        ?>
 
                     </div>
                 </div>
-
             </div>
         </section>
         <!-- End Portfolio Section -->

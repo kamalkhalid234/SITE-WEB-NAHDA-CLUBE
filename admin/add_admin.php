@@ -101,20 +101,43 @@ $conn->close();
 </head>
 <body>
 <div class="wrapper">
-    <aside id="sidebar" class="js-sidebar">
-        <!-- Contenu pour la barre latérale -->
-        <div class="h-100">
-            <div class="sidebar-logo">
-                <a href="#">CodzSword</a>
-            </div>
-            <ul class="sidebar-nav">
-                <li class="sidebar-header">Admin</li>
-                <li class="sidebar-item"><a href="index.php" class="sidebar-link">الرئيسية</a></li>
-                <li class="sidebar-item"><a href="documents.php" class="sidebar-link collapsed">إدارة</a></li>
-                <li class="sidebar-item"><a href="gallery.php" class="sidebar-link">أرشيف الجمعية</a></li>
-                <li class="sidebar-item"><a href="actualete.php" class="sidebar-link">حوارات و لقاءات</a></li>
-                <li class="sidebar-item"><a href="soutenir.php" class="sidebar-link">دعم الجمعية</a></li>
-                <li class="sidebar-item">
+<aside id="sidebar" class="js-sidebar">
+            <!-- Content For Sidebar -->
+            <div class="h-100">
+                <div class="sidebar-logo">
+                    <a href="#">CodzSword</a>
+                </div>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-header">
+                        Admin
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="index.php" class="sidebar-link">
+                            الرئيسية
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="documents.php" class="sidebar-link collapsed">
+                            إدارة
+
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="gallery.php" class="sidebar-link">
+                            أرشيف الجمعية
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="actualete.php" class="sidebar-link">
+                            حوارات و لقاءات
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="soutenir.php" class="sidebar-link">
+                            دعم الجمعية
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
                         <a href="contact.php" class="sidebar-link">
                             معلومات التواصل
                         </a>
@@ -140,7 +163,7 @@ $conn->close();
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a href="classement.php" class="sidebar-link">
+                        <a href="classement_foot.php" class="sidebar-link">
                             الترتيب
                         </a>
                     </li>
@@ -159,21 +182,78 @@ $conn->close();
                             الرياضات المتاحة
                         </a>
                     </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link collapsed" data-bs-target="#auth" data-bs-toggle="collapse"
-                       aria-expanded="false">أكاديمية-الفريق</a>
-                    <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-                        <li class="sidebar-item"><a href="#" class="sidebar-link">كرة ال
-                        <li class="sidebar-item"><a href="#" class="sidebar-link">كرة القدم</a></li>
-                        <li class="sidebar-item"><a href="#" class="sidebar-link">كرة القدم داخل القاعة</a></li>
-                        <li class="sidebar-item"><a href="#" class="sidebar-link"> كرة القدم النسوية</a></li>
-                        <li class="sidebar-item"><a href="#" class="sidebar-link">كرة السلة </a></li>
-                        <li class="sidebar-item"><a href="#" class="sidebar-link"> كرة اليد</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </aside>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#auth-m" data-bs-toggle="collapse"
+                            aria-expanded="false">
+                            المقابلات
+                        </a>
+                        <ul id="auth-m" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebare">
+                            <li class="sidebar-item">
+                                <a href="matche_foot.php" class="sidebar-link">كرة القدم</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="matche_football_sale.php" class="sidebar-link">كرة القدم داخل القاعة</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="matche_football_F.php" class="sidebar-link"> كرة القدم النسوية</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="matche_basketball.php" class="sidebar-link">كرة السلة </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="matche_handball.php" class="sidebar-link"> كرة اليد</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#auth-j" data-bs-toggle="collapse"
+                            aria-expanded="false">
+                            اللاعبين
+                        </a>
+                        <ul id="auth-j" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebare">
+                            <li class="sidebar-item">
+                                <a href="joueurs_foot.php" class="sidebar-link">كرة القدم</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="joueurs_football_sale.php" class="sidebar-link">كرة القدم داخل القاعة</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="joueurs_football_F.php" class="sidebar-link"> كرة القدم النسوية</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="joueurs_basketball.php" class="sidebar-link">كرة السلة </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="joueurs_handball.php" class="sidebar-link"> كرة اليد</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#auth-j" data-bs-toggle="collapse"
+                            aria-expanded="false">
+                            ارشيف الصور
+                        </a>
+                        <ul id="auth-j" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebare">
+                            <li class="sidebar-item">
+                                <a href="gallery_foot.php" class="sidebar-link">كرة القدم</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="gallery_football_sale.php" class="sidebar-link">كرة القدم داخل القاعة</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="gallery_football_F.php" class="sidebar-link"> كرة القدم النسوية</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="gallery_basketball.php" class="sidebar-link">كرة السلة </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="gallery_handball.php" class="sidebar-link"> كرة اليد</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </aside>
     <div class="main">
         <nav class="navbar navbar-expand px-3 border-bottom">
             <button class="btn" id="sidebar-toggle" type="button">
