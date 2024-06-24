@@ -311,7 +311,7 @@ $conn->close();
                                         <p class='card-text'>" . $row['date'] . "</p>
                                         <p class='card-text'>" . $row['content'] . "</p>
                                         <button class='btn btn-warning btn-sm' data-toggle='modal' data-target='#editNewsModal' data-id='" . $row['id'] . "' data-title='" . $row['title'] . "' data-date='" . $row['date'] . "' data-content='" . $row['content'] . "'>Éditer</button>
-                                        <form action='admin.php' method='post' style='display:inline-block;'>
+                                        <form action='actualete.php' method='post' style='display:inline-block;'>
                                             <input type='hidden' name='id' value='" . $row['id'] . "'>
                                             <button type='submit' name='delete_news' class='btn btn-danger btn-sm'>Supprimer</button>
                                         </form>
@@ -338,7 +338,7 @@ $conn->close();
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="admin.php" method="post" enctype="multipart/form-data">
+                    <form action="actualete.php" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="title">Titre :</label>
                             <input type="text" class="form-control" id="title" name="title" required>
@@ -373,7 +373,7 @@ $conn->close();
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="admin.php" method="post" enctype="multipart/form-data">
+                    <form action="actualete.php" method="post" enctype="multipart/form-data">
                         <input type="hidden" id="edit-id" name="id">
                         <div class="form-group">
                             <label for="edit-title">Titre :</label>

@@ -348,7 +348,7 @@ if (isset($_GET['delete'])) {
                                     <td class="border px-4 py-2"><?php echo $row_match['location']; ?></td>
                                     <td class="border px-4 py-2">
                                     <button class="bg-green-500 text-white px-2 py-1 rounded hover:bg-green-600 edit-match-button" data-toggle="modal" data-target="#editMatchModal" data-id="<?php echo $row_match['id']; ?>" data-team1_logo="<?php echo $row_match['team1_logo']; ?>" data-team2_logo="<?php echo $row_match['team2_logo']; ?>" data-score="<?php echo $row_match['score']; ?>" data-date="<?php echo $row_match['date']; ?>" data-time="<?php echo $row_match['time']; ?>" data-location="<?php echo $row_match['location']; ?>" data-categorie_id="<?php echo $row_match['categorie_id']; ?>">Modifier</button>
-                                        <a href="matche_sinior.php?delete=<?php echo $row_match['id']; ?>" class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce match ?');">Supprimer</a>
+                                        <a href="matche_foot.php?delete=<?php echo $row_match['id']; ?>" class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce match ?');">Supprimer</a>
                                     </td>
                                 </tr>
                             <?php endwhile; ?>
@@ -372,7 +372,7 @@ if (isset($_GET['delete'])) {
                 </button>
             </div>
             <div class="modal-body">
-                <form id="addMatchForm" method="post" action="matche_sinior.php" enctype="multipart/form-data">
+                <form id="addMatchForm" method="post" action="matche_foot.php" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="categorie_id">Catégorie</label>
                         <select class="form-control" id="categorie_id" name="categorie_id">
@@ -423,7 +423,7 @@ if (isset($_GET['delete'])) {
                 </button>
             </div>
             <div class="modal-body">
-                <form id="editMatchForm" method="post" action="matche_sinior.php" enctype="multipart/form-data">
+                <form id="editMatchForm" method="post" action="matche_foot.php" enctype="multipart/form-data">
                     <input type="hidden" id="edit_id" name="id">
                     <div class="form-group">
                         <label for="edit_categorie_id">Catégorie</label>

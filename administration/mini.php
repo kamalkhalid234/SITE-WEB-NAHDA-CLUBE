@@ -184,7 +184,6 @@ if ($conne->connect_error) {
                                             </div>
                                             <div class="profile-details bg-primary d-flex justify-content-center align-items-center">
                                                 <div class="text-center">
-                                                    <h4 class="job text-yellow mb-0">' . $row["numero_maillot"] . '</h4>
                                                     <h3 class="name text-white">' . $row["prenom"] . ' ' . $row["nom"] . '</h3>
                                                     <h4 class="role text-yellow mb-0">' . $row["role"] . '</h4>
                                                 </div>

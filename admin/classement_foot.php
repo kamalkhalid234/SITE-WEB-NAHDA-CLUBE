@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-/* if (!isset($_SESSION['admin_id'])) {
+if (!isset($_SESSION['admin_id'])) {
     header("Location: index.php");
     exit();
-} */
+}
 
 $servername = "localhost";
 $username = "root";
@@ -75,11 +75,23 @@ $conn->close();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .wrapper {
+            display: flex;
+            min-height: 100vh;
+        }
+        #sidebar {
+            width: 250px;
+            flex-shrink: 0;
+        }
+        .main {
+            flex-grow: 1;
+        }
+    </style>
 </head>
 <body>
 
 <div class="wrapper">
-<aside id="sidebar" class="js-sidebar">
             <!-- Content For Sidebar -->
             <aside id="sidebar" class="js-sidebar">
             <!-- Content For Sidebar -->

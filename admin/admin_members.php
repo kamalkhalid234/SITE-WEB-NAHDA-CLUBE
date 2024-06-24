@@ -29,7 +29,7 @@ if(isset($_POST['add_member'])){
     $image = $_FILES['image']['name'];
 
     // Upload de l'image
-    $target_dir = "uploads/image/";
+    $target_dir = "uploads/personnel/";
     $target_file = $target_dir . basename($_FILES["image"]["name"]);
     move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
 
@@ -60,7 +60,7 @@ if(isset($_POST['edit_member']) && isset($_POST['role_id'])){
 
     if ($image) {
         // Upload de la nouvelle image
-        $target_dir = "../assets/img/personnel/";
+        $target_dir = "uploads/personnel/";
         $target_file = $target_dir . basename($_FILES["image"]["name"]);
         move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
 
@@ -308,7 +308,7 @@ $conn->close();
                     while ($row = $result->fetch_assoc()) {
                         echo "<div class='col-md-4'>
                         <div class='card mb-4'>
-                            <img src='uploads/image/" . $row["image"] . "' class='card-img-top gallery-image' alt='" . $row["name"] . "'>
+                            <img src='uploads/personnel/" . $row["image"] . "' class='card-img-top gallery-image' alt='" . $row["name"] . "'>
                             <div class='card-body'>
                                 <h5 class='card-title'>" . $row["name"] . "</h5>
                                 <p class='card-text'>" . $row["role_name"] . "</p>

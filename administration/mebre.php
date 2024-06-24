@@ -119,7 +119,7 @@
                         while ($row = $result->fetch_assoc()) {
                             echo '<div class="col-md-4">';
                             echo '<div class="card mb-3 shadow">';
-                            echo '<img src="../admin//uploads/image/' . $row["image"] . '" class="card-img-top" alt="' . $row["name"] . '">';
+                            echo '<img src="../admin//uploads/personnel/' . $row["image"] . '" class="card-img-top" alt="' . $row["name"] . '">';
                             echo '<div class="card-body">';
                             echo '<h5 class="card-title">' . $row["name"] . '</h5>';
                             echo '<p class="card-text">' . $row["role_name"] . '</p>';

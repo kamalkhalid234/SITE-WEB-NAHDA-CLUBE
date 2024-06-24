@@ -352,7 +352,7 @@ $conne->close();
                                         <img src='uploads/image/" . htmlspecialchars($row["image"]) . "' class='card-img-top gallery-image' alt='Image' data-category-id='" . htmlspecialchars($row["categorie_id"]) . "'>
                                         <div class='card-body'>
                                             <p>Type : " . htmlspecialchars($row["type"]) . "</p>
-                                            <form action='gallery.php' method='post' style='display: inline;'>
+                                            <form action='gallery_foot.php' method='post' style='display: inline;'>
                                                 <input type='hidden' name='id' value='" . htmlspecialchars($row["id"]) . "'>
                                                 <button type='submit' name='delete_image' class='btn btn-danger btn-sm'>Supprimer</button>
                                             </form>

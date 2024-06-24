@@ -135,8 +135,8 @@ if ($conne->connect_error) {
                                     echo '
                                     <div class="swiper-slide match-card shadow">
                                         <div class="team-logos">
-                                            <img src="../assets/img/' . $row["team1_logo"] . '" alt="Team 1 Logo">
-                                            <img src="../assets/img/' . $row["team2_logo"] . '" alt="Team 2 Logo">
+                                            <img src="../admin/' . $row["team1_logo"] . '" alt="Team 1 Logo">
+                                            <img src="../admin/' . $row["team2_logo"] . '" alt="Team 2 Logo">
                                         </div>
                                         <h2>' . $row["score"] . '</h2>
                                         <div class="details">
@@ -179,7 +179,7 @@ if ($conne->connect_error) {
                                         echo '
                                         <div class="card swiper-slide shadow">
                                             <div class="image-box">
-                                                <img src="../admin/image/' . $row["image"] . '" alt="Player Image" />
+                                                <img src="../admin/' . $row["image"] . '" alt="Player Image" />
                                             </div>
                                             <div class="profile-details bg-primary d-flex justify-content-center align-items-center">
                                                 <div class="text-center">
